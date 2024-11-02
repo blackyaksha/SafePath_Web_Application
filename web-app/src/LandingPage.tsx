@@ -11,18 +11,15 @@ function LandingPage() {
           <div className="bg-[#302F2D]/70 h-16 w-full flex items-center justify-between rounded-[10px] header-shadow px-[36px]">
             <div className="flex space-x-9">
               <button 
-                style={{ fontSize: '15px', fontFamily: 'Inter', fontWeight: '500' }} 
-                className="text-white hover:text-[#AAD400]">
+                className="header-container-buttons text-white hover:text-[#AAD400]">
                 About
               </button>
               <button 
-                style={{ fontSize: '15px', fontFamily: 'Inter', fontWeight: '500' }} 
-                className="text-white hover:text-[#AAD400]">
+                className="header-container-buttons text-white hover:text-[#AAD400]">
                 Report a hazard
               </button>
               <button 
-                style={{ fontSize: '15px', fontFamily: 'Inter', fontWeight: '500' }} 
-                className="text-white hover:text-[#AAD400]">
+                className="header-container-buttons text-white hover:text-[#AAD400]">
                 Simulation Tool
               </button>
             </div>
@@ -31,13 +28,11 @@ function LandingPage() {
           {/* Right-aligned buttons outside the main container */}
           <div className="absolute right-[-500px] top-0 h-16 flex items-center space-x-9">
             <button 
-              style={{ fontSize: '15px', fontFamily: 'Inter', fontWeight: '600' }} 
-              className="text-[#AAD400] hover:text-[#C4C98C]">
+              className="header-rightSide-buttons text-[#AAD400] hover:text-[#C4C98C]">
               Sign in
             </button>
             <button 
-              style={{ fontSize: '15px', fontFamily: 'Inter', fontWeight: '600' }} 
-              className="text-[#000000] hover:text-[#AAD400]">
+              className="header-rightSide-buttons text-[#000000] hover:text-[#AAD400]">
               Create an account
             </button>
           </div>
