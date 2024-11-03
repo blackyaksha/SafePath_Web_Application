@@ -1,6 +1,6 @@
 .header-shadow {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  }
+}
 
 /* Style for header buttons */
 .header-container-buttons {
@@ -8,11 +8,58 @@
     font-family: Inter, sans-serif;
     font-weight: 500;
     transition: color 0.3s;
-  }
+}
 
 .header-rightSide-buttons {
     font-size: 15px;
     font-family: Inter, sans-serif;
     font-weight: 600;
     transition: color 0.3s;
-  }
+}
+
+/* Inner shadow for the "Sign in" button */
+.sign-in-button {
+    text-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Hero-Section-HeaderText {
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 80px;
+}
+
+.Hero-Section-SubheadingText {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Button style for Open Simulation Tool */
+.open-simulation-button {
+    background-color: rgba(48, 47, 45, 0.7); /* 70% transparency */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 35px; /* Adjusts spacing from the text above */
+    padding: 10px 16px; /* Adjusts padding for button */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 211px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Icon style */
+.open-simulation-button .icon {
+    font-size: 20px; /* Icon size */
+    width: 20px; /* Ensures icon has a width of 20px */
+    height: 20px; /* Ensures icon has a height of 20px */
+    margin-left: 4px; /* Adds space between text and icon */
+}
