@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './LandingPage.css';
 
 function LandingPage() {
@@ -16,6 +16,34 @@ function LandingPage() {
   const scrollToDownloadMobileApp = () => {
     downloadMobileAppRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // Array of features to display in circular motion
+  const features = [
+    "3D MAP VIEW", "OPTIMIZE EVACUATION ROUTES", 
+    "VIEW & SIMULATE HAZARDS", 
+    "IDENTIFY AREAS & ENTITIES AFFECTED BY HAZARDS", 
+    "REPORT EXISTING & POTENTIAL HAZARDS"
+  ];
+  const [startIndex, setStartIndex] = useState(0); // Start index for visible features
+
+
+  // Handle circular navigation
+  const handleNext = () => {
+    setStartIndex((prevIndex) => (prevIndex + 1) % features.length);
+  };
+
+  const handlePrevious = () => {
+    setStartIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
+  };
+
+  // Calculate the displayed features based on the current index
+  const visibleFeatures = [
+    features[(startIndex + 3) % features.length],
+    features[(startIndex + 4) % features.length],
+    features[startIndex],
+    features[(startIndex + 1) % features.length],
+    features[(startIndex + 2) % features.length],
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -111,13 +139,38 @@ function LandingPage() {
       </section>
 
       {/* Main Content Area: Displays features */}
-      <section 
-        className="flex items-center justify-center min-h-screen bg-white"
-        ref={mainContentRef}  // Attach ref to the section
-      >
+      <section className="flex items-center justify-center min-h-screen bg-white" ref={mainContentRef}>
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Main Content Area</h2>
-          <p className="text-lg">This is where your main content will go.</p>
+          <h2 className="features-text">Features</h2>
+          
+          <div className="flex items-center justify-center space-x-20 mt-8">
+            {/* Container for video demo */}
+            <div className="demo-container">
+              {/* Placeholder for video demo */}
+            </div>
+
+            {/* Feature navigation and stack */}
+            <div className="feature-navigation-container text-center">
+              <button onClick={handlePrevious} className="navigate-button mb-6">
+                <span className="material-icons">navigate_before</span>
+              </button>
+
+              <div className={`feature-stack`}>
+                {visibleFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`feature-item feature-size-${index === 2 ? 'large' : index === 1 || index === 3 ? 'medium' : 'small'}`}
+                  >
+                    {feature}
+                  </div>
+                ))}
+              </div>
+
+              <button onClick={handleNext} className="navigate-button mt-6">
+                <span className="material-icons">navigate_next</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -165,11 +218,21 @@ function LandingPage() {
 
       {/* Footer - Fixed footer at the bottom of the page */}
       <footer 
-        className="footer-section"
+        className="footer-section relative"
         style={{ backgroundImage: 'url(/bg-images/footer-bg-image.png)' }}
       >
-        <div className="footer-content">
-
+        <h2 className="footer-text">CONTACT US</h2>
+        <div className="footer-content flex items-center">
+          <img 
+            src="/logo/SafePath-Logo.png" 
+            alt="SafePath Logo" 
+            className="h-[70px] w-[70px]" 
+          />
+          <img 
+            src="/logo/SafePath-Text.png" 
+            alt="SafePath Text" 
+            className="h-[33px] w-[150px]"
+          />
         </div>
       </footer>
 
