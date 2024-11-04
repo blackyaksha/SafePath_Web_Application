@@ -1,0 +1,20 @@
+/* src/Simulation Tool/SimulationTool.css */
+
+.simulation-container {
+    display: flex; /* Use flexbox to align side panel and main content */
+}
+
+.side-panel {
+    width: 78px; /* Set width of the side panel */
+    height: 100vh; /* Full height of the viewport */
+    background-color: white; /* White background */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Drop shadow */
+    position: fixed; /* Fixed position */
+    top: 0; /* Aligns to the top of the page */
+    left: 0; /* Aligns to the left of the page */
+}
+
+.main-content {
+    margin-left: 78px; /* Space for the side panel */
+    flex-grow: 1; /* Allow it to take the remaining space */
+}
