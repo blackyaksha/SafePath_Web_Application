@@ -1,0 +1,276 @@
+.header-shadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Style for header buttons */
+.header-container-buttons {
+    font-size: 15px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header-rightSide-buttons {
+    font-size: 15px;
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+    transition: color 0.3s;
+}
+
+/* Inner shadow for the "Sign in" button */
+.sign-in-button {
+    text-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust this for the fade height */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+  }
+
+.Hero-Section-HeaderText {
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 120px;
+}
+
+.Hero-Section-SubheadingText {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Button style for Open Simulation Tool */
+.open-simulation-button {
+    background-color: rgba(48, 47, 45, 0.7); /* 70% transparency */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 50px; /* Adjusts spacing from the text above */
+    padding: 10px 16px; /* Adjusts padding for button */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 211px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Icon style */
+.open-simulation-button .icon {
+    font-size: 20px; /* Icon size */
+    width: 20px; /* Ensures icon has a width of 20px */
+    height: 20px; /* Ensures icon has a height of 20px */
+    margin-left: 4px; /* Adds space between text and icon */
+}
+
+.explore-features-button {
+    background-color: transparent; /* 70% transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 50px; /* Adjusts spacing from the text above */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 200px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.download-mobileApp-button {
+    background-color: transparent; /* 70% transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 50px; /* Adjusts spacing from the text above */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 189px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.download-mobileApp-button .icon {
+    font-size: 20px; /* Icon size */
+    width: 20px; /* Ensures icon has a width of 20px */
+    height: 20px; /* Ensures icon has a height of 20px */
+    margin-right: 8px; /* Adds space between text and icon */
+}
+
+.download-mobileApp-headingText {
+    font-size: 45px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.download-mobileApp-subheadingText {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobileAppSplashScreen {
+    margin-top: 80px;
+}
+
+.footer-section {
+    background-size: 1540px 456px; /* Adjust background size */
+    background-repeat: no-repeat;   /* Prevent repeating the image */
+    height: 456px;                  /* Set height as required */
+    width: 100%;                    /* Full width */
+    display: flex;                  /* Optional: to arrange footer content */
+    align-items: center;            /* Center content vertically */
+    justify-content: center;        /* Center content horizontally */
+    padding: 20px;                  /* Optional: add some padding */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+
+.footer-content {
+    max-width: 1200px; /* Optional: max width for content */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.footer-text {
+    position: absolute; /* Position the text absolutely */
+    top: 10px; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset by half of its width to center */
+    color: white; /* Set text color */
+    font-size: 24px; /* Adjust font size as needed */
+    align-items: center;
+    justify-content: center;
+}
+
+.navigate-button {
+    font-size: 32px; /* Adjust the size as needed */
+    width: 50px;     /* Adjust button width */
+    height: 50px;    /* Adjust button height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s; /* Smooth transition for scaling */
+    cursor: pointer;
+    transform: rotate(90deg);   /* Initial rotation */
+}
+
+.navigate-button:hover {
+    transform: scale(1.1) rotate(360deg); /* Scale and rotate on hover */
+}
+
+/* Optional: Add a keyframe animation for the return to the original rotation */
+@keyframes returnToOriginal {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(90deg); }
+}
+
+.navigate-button:hover {
+    animation: returnToOriginal 0.2s forwards; /* Animate returning to 90 degrees */
+}
+
+.navigate-button .material-icons {
+    font-size: 50px; /* Adjust icon size as needed */
+}
+
+
+  .features-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;             /* Added "px" for the font size */
+    font-weight: 650;            /* Bold text for emphasis */
+    text-align: center;          /* Centers the text */
+    color: #000000;              /* Dark gray color */
+    margin-top: 3rem;          /* Top margin for spacing */
+    margin-bottom: 3.5rem;         /* Bottom margin for spacing */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.demo-container {
+    height: 420px;
+    width: 606px;
+    background-color: #E5E7EB; /* This is equivalent to bg-gray-200 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+  
+  .feature-navigation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-stack {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+  }
+  
+.feature-item {
+    background-color: #f0f0f0; /* Background color for feature items */
+    padding: 20px; /* Padding inside the feature item */
+    border-radius: 10px; /* Rounded corners */
+    align-items: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+  }
+
+.feature-size-large {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 516px; /* Set width for the largest feature */
+    height: 64px; /* Set height for the largest feature */
+    font-size: 15px; /* Font size for the largest feature */
+    background-color: #302F2D; /* Optional background color for visibility */
+    color: white;
+}
+
+
+.feature-size-medium {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 416px; /* Set width for medium features */
+    height: 50.97px; /* Set height for medium features */
+    font-size: 13px; /* Font size for medium features */
+    background-color: #787776; /* Optional background color for visibility */
+    color: #A8A8A8;
+}
+
+.feature-size-small {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 316px; /* Set width for the smallest feature */
+    height: 37.93px; /* Set height for the smallest feature */
+    font-size: 10px; /* Font size for the smallest feature */
+    background-color: #AFAFAF; /* Optional background color for visibility */
+    color: #C7C7C7;
+}
