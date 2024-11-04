@@ -1,18 +1,72 @@
+/* SimulationTool.css */
+
 .simulation-container {
     display: flex; /* Use flexbox to align side panel and main content */
 }
 
+.simulation-container .side-panel {
+    width: 85px; /* Try a larger width */
+}
+
+
 .side-panel {
-    width: 78px; /* Set width of the side panel */
-    height: 100vh; /* Full height of the viewport */
-    background-color: white; /* White background */
+    background-color: white; /* Set background color for the side panel */
+    width: 80px; /* Width of the side panel */
+    height: 100vh; /* Full height */
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Drop shadow */
-    position: fixed; /* Fixed position */
-    top: 0; /* Aligns to the top of the page */
-    left: 0; /* Aligns to the left of the page */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column; /* Stack buttons vertically */
+    padding-top: 20px;
+}
+
+.icon-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* No outline */
+    margin: 15px 0; /* Add vertical spacing between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Combine icon and text hover effects */
+.icon-button:hover .material-icons,
+.icon-button:hover .icon-text {
+    color: #AAD400; /* Change color on hover */
+    transition: color 0.2s; 
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-text {
+    font-size: 8px; /* Updated to match your requirement */
+    color: black; /* Default text color */
+    margin-top: 4px; /* Adds a small space between the icon and text */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.icon-button .material-icons {
+    font-size: 30px; /* Icon size */
+    color: #000; /* Icon color */
 }
 
 .main-content {
-    margin-left: 78px; /* Space for the side panel */
-    flex-grow: 1; /* Allow it to take the remaining space */
+    flex-grow: 1; /* Take the remaining width */
+    height: 100vh; /* Full height */
+}
+
+.control-panel {
+    background-color: white; /* White background for control panel */
+    padding: 15px; /* Padding for control panel */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 20px; /* Space between Canvas and controls */
 }

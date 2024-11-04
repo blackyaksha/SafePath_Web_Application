@@ -1,16 +1,86 @@
 // src/Simulation Tool/SimulationTool.tsx
-import React from 'react';
-import './SimulationTool.css'; // Make sure to import the CSS file
+import React, { useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import './SimulationTool.css';
+
+// Create a component to load the GLTF model
+function Model() {
+  const { scene } = useGLTF('./map-files/Mayamot_Antipolo.gltf');
+  return <primitive object={scene} scale={[200, 200, 200]} />;
+}
 
 function SimulationTool() {
+  const [selectedFeature, setSelectedFeature] = useState('map'); // State to track selected feature
+
+  // Render controls based on the selected feature
+  const renderControls = () => {
+    switch (selectedFeature) {
+      case 'map':
+        return (
+          <div>
+            <h3>Map Navigation Controls</h3>
+            {/* Add controls specific to map navigation here */}
+          </div>
+        );
+      case 'route':
+        return (
+          <div>
+            <h3>Route Optimization Controls</h3>
+            {/* Add controls specific to route optimization here */}
+          </div>
+        );
+      case 'report':
+        return (
+          <div>
+            <h3>Report Hazard Controls</h3>
+            {/* Add controls specific to reporting hazards here */}
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="simulation-container">
       {/* Side Panel */}
-      <div className="side-panel" />
+      <div className="side-panel">
+        {/* Map Icon Button */}
+        <button className="icon-button" onClick={() => setSelectedFeature('map')}>
+          <div className="icon-container">
+            <span className="material-icons">map</span>
+            <span className="icon-text">Explore Map</span>
+          </div>
+        </button>
+        
+        {/* Route Icon Button */}
+        <button className="icon-button" onClick={() => setSelectedFeature('route')}>
+          <div className="icon-container">
+            <span className="material-icons">route</span>
+            <span className="icon-text">Optimize Routes</span>
+          </div>
+        </button>
+
+        {/* Report hazards Icon Button */}
+        <button className="icon-button" onClick={() => setSelectedFeature('report')}>
+          <div className="icon-container">
+            <span className="material-icons">report_gmailerrorred</span>
+            <span className="icon-text">Report a Hazard</span>
+          </div>
+        </button>
+      </div>
 
       {/* Main Content Area */}
       <div className="main-content">
-        {/* Add your main content here */}
+        <Canvas camera={{ near: 0.1, far: 1000 }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} />
+          <Model />
+          <OrbitControls minDistance={1} maxDistance={2000} />
+        </Canvas>
+        {/* Render the controls based on the selected feature */}
+        {renderControls()}
       </div>
     </div>
   );
