@@ -13,7 +13,7 @@
 .header-rightSide-buttons {
     font-size: 15px;
     font-family: Inter, sans-serif;
-    font-weight: 600;
+    font-weight: 650;
     transition: color 0.3s;
 }
 
@@ -22,12 +22,28 @@
     text-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust this for the fade height */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+  }
+
 .Hero-Section-HeaderText {
     font-size: 50px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .Hero-Section-SubheadingText {
@@ -42,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center; /* Center items horizontally */
-    margin-top: 35px; /* Adjusts spacing from the text above */
+    margin-top: 50px; /* Adjusts spacing from the text above */
     padding: 10px 16px; /* Adjusts padding for button */
     border-radius: 10px; /* Rounded corners */
     cursor: pointer; /* Changes cursor on hover */
@@ -62,4 +78,85 @@
     width: 20px; /* Ensures icon has a width of 20px */
     height: 20px; /* Ensures icon has a height of 20px */
     margin-left: 4px; /* Adds space between text and icon */
+}
+
+.explore-features-button {
+    background-color: transparent; /* 70% transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 50px; /* Adjusts spacing from the text above */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 200px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.download-mobileApp-button {
+    background-color: transparent; /* 70% transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-top: 50px; /* Adjusts spacing from the text above */
+    cursor: pointer; /* Changes cursor on hover */
+    width: 189px; /* Ensures icon has a width of 20px */
+    height: 64px; /* Ensures icon has a height of 20px */
+    font-size: 15px; 
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.download-mobileApp-button .icon {
+    font-size: 20px; /* Icon size */
+    width: 20px; /* Ensures icon has a width of 20px */
+    height: 20px; /* Ensures icon has a height of 20px */
+    margin-right: 8px; /* Adds space between text and icon */
+}
+
+.download-mobileApp-headingText {
+    font-size: 45px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.download-mobileApp-subheadingText {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobileAppSplashScreen {
+    margin-top: 80px;
+}
+
+.footer-section {
+    background-size: 1540px 456px; /* Adjust background size */
+    background-repeat: no-repeat;   /* Prevent repeating the image */
+    height: 456px;                  /* Set height as required */
+    width: 100%;                    /* Full width */
+    display: flex;                  /* Optional: to arrange footer content */
+    align-items: center;            /* Center content vertically */
+    justify-content: center;        /* Center content horizontally */
+    padding: 20px;                  /* Optional: add some padding */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+
+.footer-content {
+    max-width: 1200px; /* Optional: max width for content */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.footer-text {
+    font-size: 14px; /* Text size for footer */
+    font-family: 'Inter', sans-serif;
+    color: #333; /* Text color */
+    margin: 5px 0; /* Space between lines */
 }
