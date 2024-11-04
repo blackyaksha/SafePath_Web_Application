@@ -221,7 +221,7 @@ function LandingPage() {
         className="footer-section relative"
         style={{ backgroundImage: 'url(/bg-images/footer-bg-image.png)' }}
       >
-        <h2 className="footer-text">CONTACT US</h2>
+        <h2 className="footer-text mt-4">CONTACT US</h2>
         <div className="footer-content flex items-center">
           <img 
             src="/logo/SafePath-Logo.png" 
