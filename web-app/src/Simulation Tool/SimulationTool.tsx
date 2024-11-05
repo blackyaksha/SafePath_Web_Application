@@ -7,7 +7,7 @@ import './SimulationTool.css';
 // Create a component to load the GLTF model
 function Model() {
   const { scene } = useGLTF('./map-files/Mayamot_Antipolo.gltf');
-  return <primitive object={scene} scale={[200, 200, 200]} />;
+  return <primitive object={scene} scale={[250, 250, 250]} />;
 }
 
 function SimulationTool() {
@@ -73,6 +73,11 @@ function SimulationTool() {
 
       {/* Main Content Area */}
       <div className="main-content">
+        
+        <div className="explore-features-panel ml-10 mt-10">
+          
+        </div>
+
         <Canvas camera={{ near: 0.1, far: 1000 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} />

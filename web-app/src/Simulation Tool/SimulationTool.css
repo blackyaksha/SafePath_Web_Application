@@ -70,3 +70,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     margin-top: 20px; /* Space between Canvas and controls */
 }
+
+.explore-features-panel {
+    display:flex;
+    margin-top: 20;
+    margin-left: 10;
+    background-color: #FFFFFF;
+    height: 115px;
+    width: 287px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+}
