@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import './SimulationTool.css';
+import ExploreMapControls from './ExploreMapControls'; // Import the new component
 
 // Create a component to load the GLTF model
 function Model() {
@@ -12,16 +13,14 @@ function Model() {
 
 function SimulationTool() {
   const [selectedFeature, setSelectedFeature] = useState('map'); // State to track selected feature
+  const [searchTerm, setSearchTerm] = useState(''); // State to track search input
 
   // Render controls based on the selected feature
   const renderControls = () => {
     switch (selectedFeature) {
       case 'map':
         return (
-          <div>
-            <h3>Map Navigation Controls</h3>
-            {/* Add controls specific to map navigation here */}
-          </div>
+          <ExploreMapControls onSearch={setSearchTerm} /> // Use the new component
         );
       case 'route':
         return (
@@ -73,19 +72,16 @@ function SimulationTool() {
 
       {/* Main Content Area */}
       <div className="main-content">
-        
-        <div className="explore-features-panel ml-10 mt-10">
-          
-        </div>
+        {/* Render the controls based on the selected feature */}
+        {renderControls()}
 
+        {/* 3D Model Canvas */}
         <Canvas camera={{ near: 0.1, far: 1000 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} />
           <Model />
           <OrbitControls minDistance={1} maxDistance={2000} />
         </Canvas>
-        {/* Render the controls based on the selected feature */}
-        {renderControls()}
       </div>
     </div>
   );

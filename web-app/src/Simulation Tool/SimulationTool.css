@@ -2,14 +2,13 @@
 
 .simulation-container {
     display: flex; /* Use flexbox to align side panel and main content */
-}
-
-.simulation-container .side-panel {
+  }
+  
+  .simulation-container .side-panel {
     width: 85px; /* Try a larger width */
-}
-
-
-.side-panel {
+  }
+  
+  .side-panel {
     background-color: white; /* Set background color for the side panel */
     width: 80px; /* Width of the side panel */
     height: 100vh; /* Full height */
@@ -19,9 +18,9 @@
     justify-content: flex-start;
     flex-direction: column; /* Stack buttons vertically */
     padding-top: 20px;
-}
-
-.icon-button {
+  }
+  
+  .icon-button {
     background: none; /* No background */
     border: none; /* No border */
     cursor: pointer; /* Pointer cursor on hover */
@@ -30,56 +29,226 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Combine icon and text hover effects */
-.icon-button:hover .material-icons,
-.icon-button:hover .icon-text {
+  }
+  
+  /* Combine icon and text hover effects */
+  .icon-button:hover .material-icons,
+  .icon-button:hover .icon-text {
     color: #AAD400; /* Change color on hover */
     transition: color 0.2s; 
-}
-
-.icon-container {
+  }
+  
+  .icon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.icon-text {
+  }
+  
+  .icon-text {
     font-size: 8px; /* Updated to match your requirement */
     color: black; /* Default text color */
     margin-top: 4px; /* Adds a small space between the icon and text */
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-}
-
-.icon-button .material-icons {
+  }
+  
+  .icon-button .material-icons {
     font-size: 30px; /* Icon size */
     color: #000; /* Icon color */
-}
-
-.main-content {
+  }
+  
+  .main-content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
     flex-grow: 1; /* Take the remaining width */
     height: 100vh; /* Full height */
+    position: relative; /* Allow positioning of absolute children */
+  }
+  
+/* Wrapper for search bar and extra container */
+.explore-map-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    width: 287px; /* Match the width of the search bar */
 }
 
-.control-panel {
-    background-color: white; /* White background for control panel */
-    padding: 15px; /* Padding for control panel */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin-top: 20px; /* Space between Canvas and controls */
-}
-
-.explore-features-panel {
-    display:flex;
-    margin-top: 20;
-    margin-left: 10;
-    background-color: #FFFFFF;
-    height: 115px;
-    width: 287px;
+/* Styling for the search bar input */
+.explore-features-searchBar {
+    width: 100%; /* Match the width of the container */
+    height: 41px;
+    padding: 5px 35px 5px 10px; /* Right padding for the icon */
+    border: 2px solid #CECECE;
     border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    justify-content: center;
+    font-size: 13px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
 }
+
+/* Container for the search bar and icon */
+.search-bar-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Search icon button positioned inside the search bar */
+.search-icon-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #888; /* Icon color */
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-button .material-icons {
+    font-size: 20px;
+    color: #888;
+}
+
+.search-icon-button:hover .material-icons {
+    color: #555; /* Change icon color on hover */
+}
+
+/* New container under the search bar */
+.display-control {
+    width: 100%; /* Match the width of the search bar */
+    height: 115px; /* Fixed height */
+    background-color: #FFFFFF; /* Light background color */
+    margin-top: 12px; /* Small gap between search bar and extra container */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.display-control-header {
+    width: 100%; /* Match the width of the search bar */
+    height: 37px; /* Fixed height */
+    background-color: #302F2D; /* Light background color */
+    border-radius: 10px; /* Optional rounded corners */
+    border: 2px solid #CECECE;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+  
+  .map-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    margin: 20px; /* Space from the top */
+  }
+
+.hazard-assessment-control {
+    width: 100%; /* Match the width of the search bar */
+    background-color: #FFFFFF; /* Light background color */
+    margin-top: 0px; /* Small gap between search bar and extra container */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.hazard-assessment-header {
+    width: 100%; /* Match the width of the search bar */
+    height: 37px; /* Fixed height */
+    background-color: #302F2D; /* Light background color */
+    border-radius: 10px; /* Optional rounded corners */
+    border: 2px solid #CECECE;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.radio-button-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hazards-assessment-radio-texts {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.forecast-hazards-control {
+    width: 100%; /* Match the width of the search bar */
+    background-color: #FFFFFF; /* Light background color */
+    margin-top: 12px; /* Small gap between search bar and extra container */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.forecast-hazards-header {
+    width: 100%; /* Match the width of the search bar */
+    height: 37px; /* Fixed height */
+    background-color: #302F2D; /* Light background color */
+    border-radius: 10px; /* Optional rounded corners */
+    border: 2px solid #CECECE;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.forecast-hazards-radio-texts {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkbox-label .MuiFormControlLabel-label{
+    font-family: 'Inter', sans-serif;  /* Change the font family */
+    font-size: 12px;  /* Change the font size */
+    font-weight: 600;  /* Make the font bold */
+    color: black;  /* Set text color */
+  }
+  
+  /* Optional: Style the checkbox itself (the box itself) */
+  .checkbox-label .MuiCheckbox-root {
+    padding: 4px;  /* Adjust the size of the checkbox */
+  }
+
+  
+/* Wrapper for the checkbox label */
+.checkbox-label-container {
+    display: flex;
+    flex-direction: column;  /* Stack the texts vertically */
+    align-items: flex-start;  /* Align the texts to the left */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Main label text */
+  .checkbox-label-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: black;
+  }
+  
+  /* Additional description text */
+  .checkbox-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;  /* Adjust the font size for the description */
+    color: #7F8C8D;  /* Lighter color for the description */
+    margin-top: 4px;  /* Add space between label and description */
+  }
+  
