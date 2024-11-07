@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './SimulationTool.css';
 import ExploreMapControls from './ExploreMapControls'; // Import the new component
 
@@ -52,7 +53,7 @@ function SimulationTool() {
             <span className="icon-text">Explore Map</span>
           </div>
         </button>
-        
+
         {/* Route Icon Button */}
         <button className="icon-button" onClick={() => setSelectedFeature('route')}>
           <div className="icon-container">
@@ -68,6 +69,11 @@ function SimulationTool() {
             <span className="icon-text">Report a Hazard</span>
           </div>
         </button>
+
+        {/* Logo at the bottom with clickable Link */}
+        <Link to="/" className="logo-bottom">
+          <img src="/logo/SafePath-Logo.png" alt="SafePath Logo" />
+        </Link>
       </div>
 
       {/* Main Content Area */}

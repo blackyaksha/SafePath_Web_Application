@@ -177,7 +177,7 @@
 .radio-button-text {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .hazards-assessment-radio-texts {
@@ -212,7 +212,7 @@
 .forecast-hazards-radio-texts {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .checkbox-label .MuiFormControlLabel-label{
@@ -271,3 +271,54 @@
     border-radius: 4px;                  /* Rounded corners */
   }
   
+  .debris-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .debris-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .debris-text {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; 
+  }
+  
+  .dropdown-icon {
+    color: #AAD400;
+    cursor: pointer;
+  }
+  
+  .debris-option:hover .dropdown-icon {
+    color: #AAD400;  /* Change the color of the dropdown icon on hover */
+  }
+
+/* Targeting the label inside the specific RadioGroup */
+.custom-radio-group .MuiFormControlLabel-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Apply custom styles to the labels inside the checkbox-list */
+.checkbox-list .custom-checkbox-label .MuiFormControlLabel-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.logo-bottom {
+  margin-top: auto; /* This will push the logo to the bottom */
+  margin-bottom: 10px;
+  width: 65px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
