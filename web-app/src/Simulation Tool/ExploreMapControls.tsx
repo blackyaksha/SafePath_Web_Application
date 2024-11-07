@@ -124,8 +124,8 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
       <div 
         className="forecast-hazards-control" 
         style={{ 
-            height: forecastHazardsEnabled ? '200px' : '37px',  // Use fixed height values
-            transition: 'height 0.2s ease'  // Smooth transition for height
+            height: forecastHazardsEnabled ? '225px' : '37px',  // Use fixed height values
+            transition: 'height 0.2s ease',  // Smooth transition for height
         }}
         >
         
@@ -138,7 +138,13 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
           />
         </div>
         {forecastHazardsEnabled && (
-          <div className="hazard-assessment-content">
+          <div 
+            className="hazard-assessment-content"
+            style={{
+              maxHeight: '175px',  // Adjusted to fit within the 250px container
+              overflowY: 'auto'    // Enables scrolling for this content only
+            }}
+          >
             <RadioGroup
                 row
                 aria-label="view"
@@ -156,6 +162,43 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
                     <StyledRadio value="Barangay Level" />
                 </div>
             </RadioGroup>
+
+            {/* Divider Line */}
+            <hr className="mt-1 border-t-2 w-[249px] mx-auto border-gray-300" />
+
+            {/* Checkboxes */}
+            <div className="checkboxes ml-6 mt-5 flex flex-col gap-5">
+              <FormControlLabel
+                control={<Checkbox checked={checkbox1} onChange={handleCheckboxChange1} size="small" />}
+                label={<div className="ml-2 checkbox-label-container">
+                    <span className="forecast-hazards-radio-texts">Flood</span>
+                </div>}
+                className="checkbox-label"
+              />
+              {checkbox1 && (
+                <RadioGroup name="floodOptions" className="ml-10">
+                  <FormControlLabel value="low" control={<StyledRadio />} label="Minor" />
+                  <FormControlLabel value="medium" control={<StyledRadio />} label="Moderate" />
+                  <FormControlLabel value="high" control={<StyledRadio />} label="Severe" />
+                </RadioGroup>
+              )}
+
+              <FormControlLabel
+                label={<div className="ml-2 checkbox-label-container">
+                    <span className="forecast-hazards-radio-texts">Debris</span>
+                </div>}
+                control={<Checkbox checked={checkbox2} onChange={handleCheckboxChange2} size="small"/>}
+                className="checkbox-label"
+              />
+              {checkbox2 && (
+                <RadioGroup name="debrisOptions" className="ml-10">
+                  <FormControlLabel value="light" control={<StyledRadio />} label="Light" />
+                  <FormControlLabel value="moderate" control={<StyledRadio />} label="Moderate" />
+                  <FormControlLabel value="severe" control={<StyledRadio />} label="Severe" />
+                </RadioGroup>
+              )}
+            </div>
+
           </div>
         )}
       </div>
@@ -164,7 +207,7 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
       <div 
         className="hazard-assessment-control" 
         style={{ 
-            height: hazardAssessmentEnabled ? '250px' : '37px',  // Use fixed height values
+            height: hazardAssessmentEnabled ? '245px' : '37px',  // Use fixed height values
             transition: 'height 0.2s ease'  // Smooth transition for height
         }}
         >

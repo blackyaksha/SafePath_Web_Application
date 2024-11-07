@@ -252,3 +252,22 @@
     margin-top: 4px;  /* Add space between label and description */
   }
   
+  .hazard-assessment-content {  
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;               /* For Firefox */
+    scrollbar-color: #888 transparent;       /* For Firefox */
+  }
+  
+  .hazard-assessment-content::-webkit-scrollbar {
+    width: 8px;                          /* Width of the scrollbar */
+  }
+  
+  .hazard-assessment-content::-webkit-scrollbar-track {
+    background: none;  
+  }
+  
+  .hazard-assessment-content::-webkit-scrollbar-thumb {
+    background-color: #888;              /* Scrollbar color */
+    border-radius: 4px;                  /* Rounded corners */
+  }
+  
