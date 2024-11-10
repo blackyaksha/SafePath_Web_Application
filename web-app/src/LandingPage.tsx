@@ -45,6 +45,12 @@ function LandingPage() {
     features[(startIndex + 2) % features.length],
   ];
 
+  // Copy email function
+  const copyEmail = () => {
+    navigator.clipboard.writeText("safepath@proton.me");
+    alert("Email address copied to clipboard!");
+  }; 
+
   return (
     <div className="min-h-screen bg-white">
 
@@ -187,19 +193,26 @@ function LandingPage() {
             <p className="download-mobileApp-subheadingText text-black">Download our mobile app now!</p>
 
             {/* Download Buttons */}
-            <div className="flex space-x-7 mt-10">
+            <div className="flex space-x-5 mt-10">
               <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
                 <img 
                   src="/section-display-images/AppStoreDownloadButton.png" 
                   alt="Download on the App Store" 
-                  className="h-[59px] w-[176.45px]" 
+                  className="h-[49px]" 
                 />
               </a>
               <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                 <img 
                   src="/section-display-images/GooglePlayDownloadButton.png" 
                   alt="Get it on Google Play" 
-                  className="h-[59px] w-[199px]" 
+                  className="h-[49px]" 
+                />
+              </a>
+              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="/section-display-images/FDroidDownloadButton.png" 
+                  alt="Get it on F-Droid" 
+                  className="h-[49px]" 
                 />
               </a>
             </div>
@@ -221,8 +234,64 @@ function LandingPage() {
         className="footer-section relative"
         style={{ backgroundImage: 'url(/bg-images/footer-bg-image.png)' }}
       >
-        <h2 className="footer-text mt-4">CONTACT US</h2>
-        <div className="footer-content flex items-center">
+        <div className="footer-header">
+          <div className="socials-text-container">
+            <div className="socials-text">SOCIALS</div>
+            <div className="social-icons">
+              <button>
+                <img 
+                  src="/icon-images/FB-icon-white.png" /* Replace with actual path */
+                  alt="Facebook Logo" 
+                  className="social-icon"
+                />
+              </button>
+              <button>
+                <img 
+                  src="/icon-images/LinkedIn-icon-white.png" /* Replace with actual path */
+                  alt="LinkedIn Logo" 
+                  className="social-icon"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div className="contact-us-container">
+            <div className="contact-us-text">CONTACT US</div>
+            <div className="contact-email">
+              <span className="material-icons mail-icon">mail</span>
+              <span className="email-text">safepath@proton.me</span>
+            </div>
+            <div className="contact-phone mt-[17px]">
+              <span className="material-icons call-icon">call</span>
+              <span className="phone-text">+63 965 507 6304</span>
+            </div>
+          </div>
+          
+          <div className="about-text-container">
+            <div className="about-text">ABOUT</div>
+            <div className="about-links">
+
+              <button className="about-link flex hover:text-[#AAD400]">
+                <span>What is SafePath</span>
+              </button>
+              <button className="about-link flex hover:text-[#AAD400]">
+                <span>The Team behind SafePath</span>
+              </button>
+              <button className="about-link flex hover:text-[#AAD400]">
+                <span>Acknowledgments</span>
+              </button>
+              <button className="about-link flex hover:text-[#AAD400]">
+                <span>Privacy Policy</span>
+              </button>
+              <button className="about-link flex hover:text-[#AAD400]">
+                <span>Standards Compliance</span>
+              </button>
+            </div>
+          </div>
+        
+        </div>
+
+        <div className="footer-logo flex items-center">
           <img 
             src="/logo/SafePath-Logo.png" 
             alt="SafePath Logo" 
@@ -235,7 +304,6 @@ function LandingPage() {
           />
         </div>
       </footer>
-
 
     </div>
   );
