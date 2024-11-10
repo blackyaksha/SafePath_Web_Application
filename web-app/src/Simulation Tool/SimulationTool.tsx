@@ -8,7 +8,7 @@ import ExploreMapControls from './ExploreMapControls'; // Import the new compone
 
 // Create a component to load the GLTF model
 function Model() {
-  const { scene } = useGLTF('./map-files/Mayamot_Antipolo.gltf');
+  const { scene } = useGLTF('./map-files/3D/Mayamot_Antipolo.gltf');
   return <primitive object={scene} scale={[250, 250, 250]} />;
 }
 

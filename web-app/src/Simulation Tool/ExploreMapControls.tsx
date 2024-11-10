@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconButton, styled, Radio, RadioGroup, Checkbox, FormControlLabel } from '@mui/material';
+import { IconButton, styled, Radio, RadioGroup, Checkbox, FormControlLabel, Slider, TextField } from '@mui/material';
 import Switch, { SwitchProps } from '@mui/material/Switch';
 
 interface ExploreMapControlsProps {
@@ -7,6 +7,7 @@ interface ExploreMapControlsProps {
 }
 
 const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => {
+  
   const [forecastHazardsEnabled, setForecastHazardsEnabled] = useState(false);  // State to track switch status
   const [hazardAssessmentEnabled, sethazardAssessmentEnabled] = useState(false);  // State to track switch status
   const [viewMode, setViewMode] = useState('3d');  // default to '3d'
@@ -15,7 +16,30 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
   const [checkbox1, setCheckbox1] = useState(false);  // State for checkbox 1
   const [checkbox2, setCheckbox2] = useState(false);  // State for checkbox 2
 
+  // Existing state declarations
   const [floodCheckbox, setFloodCheckbox] = useState(false);
+  const [selectedFloodLevel, setSelectedFloodLevel] = useState<string | null>(null); // State to track selected flood level
+  const [severeFloodValue, setSevereFloodValue] = useState<number | string>("");
+
+  // Event handler for flood level radio buttons
+  const handleFloodLevelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedFloodLevel(event.target.value);
+  };
+
+  const handleSevereFloodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    // Allow empty value for clearing the input field
+    if (value === "" || !isNaN(parseFloat(value)) && parseFloat(value) >= 2.5) {
+      setSevereFloodValue(value);
+    }
+  };
+
+  const sliderStyle = {
+    width: '160px',
+    height: '3px', // Set the thickness here
+  };
+  
   const [debrisCheckbox, setDebrisCheckbox] = useState(false);
 
   const [dropdownVisible1, setDropdownVisible1] = useState(false);  // State for showing/hiding checkboxes
@@ -201,14 +225,63 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
                 className="checkbox-label"
               />
               {floodCheckbox && (
-                <RadioGroup name="floodOptions" className="ml-7 custom-radio-group">
-                  <FormControlLabel 
-                    value="low" 
-                    control={<StyledRadio1 />} 
-                    label="Minor (1.0m - 1.5m)" 
-                  />
+                <RadioGroup name="floodOptions" className="ml-7 custom-radio-group" value={selectedFloodLevel} onChange={handleFloodLevelChange}>
+                  
+                  <FormControlLabel value="low" control={<StyledRadio1 />} label="Minor (1.0m - 1.5m)" />
+                  {/* Conditionally render slider when "Minor (1.0m - 1.5m)" is selected */}
+                  {selectedFloodLevel === 'low' && (
+                    <Slider 
+                      defaultValue={1.0} 
+                      min={1.0} 
+                      max={1.5} 
+                      step={0.1} 
+                      style={sliderStyle}
+                      size='small'
+                      valueLabelDisplay="auto"
+                      className="ml-7 mt-0.5 mb-1"
+                    />
+                  )}
                   <FormControlLabel value="medium" control={<StyledRadio1 />} label="Moderate (1.5m - 2.5m)" />
+                  {/* Conditionally render slider when "Moderate (1.5m - 2.5m)" is selected */}
+                  {selectedFloodLevel === 'medium' && (
+                    <Slider 
+                      defaultValue={1.5} 
+                      min={1.5} 
+                      max={2.5} 
+                      step={0.1} 
+                      style={sliderStyle}
+                      size='small'
+                      valueLabelDisplay="auto"
+                      className="ml-7 mt-0.5 mb-1"
+                    />
+                  )}
+
                   <FormControlLabel value="high" control={<StyledRadio1 />} label="Severe (2.5m - up)" />
+                  {/* Conditionally render TextField when "Severe (2.5m - up)" is selected */}
+                  {selectedFloodLevel === "high" && (
+                    <div style={{ display: 'flex', alignItems: 'center', marginTop: '8px', marginBottom: '10px' }}>
+                      <TextField
+                        type="number"
+                        value={severeFloodValue}
+                        onChange={handleSevereFloodChange}
+                        inputProps={{
+                          min: 2.5, // Enforces the minimum value
+                          step: 0.1, // Optionally define a step
+                          style: {
+                            fontSize: '15px', // Reduced font size
+                          }
+                        }}
+                        style={{ marginLeft: '25px', marginTop: '1px', width: '100px' }}
+                        InputProps={{
+                          style: {
+                            padding: '0.1px 1px', // Reduce padding to make the input smaller
+                          },
+                        }}
+                      />
+                      <span style={{ marginLeft: '8px', alignSelf: 'center' }}>m</span>
+                    </div>
+                  )}
+                  
                 </RadioGroup>
               )}
 
@@ -237,14 +310,14 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
                     <div className="checkbox-list flex-col">
                       <FormControlLabel
                         className="custom-checkbox-label"
-                        control={<Checkbox />}
+                        control={<Checkbox size="small"/>}
                         label={<div className="checkbox-label-container">
                           <span className="checkbox-label-text">Closed/Blocked Roads</span>
                         </div>}                        
                       />
                       <FormControlLabel
                         className="custom-checkbox-label"
-                        control={<Checkbox />}
+                        control={<Checkbox size="small"/>}
                         label={<div className="checkbox-label-container">
                           <span className="checkbox-label-text">Environmental Hazards</span>
                           <span className="checkbox-description">(e.g. Fallen Trees, Landslide Debris)</span>
@@ -252,7 +325,7 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
                       />
                       <FormControlLabel
                         className="custom-checkbox-label"
-                        control={<Checkbox />}
+                        control={<Checkbox size="small"/>}
                         label={<div className="checkbox-label-container">
                           <span className="checkbox-label-text">Collapsed Man-made Structures</span>
                           <span className="checkbox-description">(e.g. Buildings, Houses, Utility Poles)</span>
@@ -276,20 +349,20 @@ const ExploreMapControls: React.FC<ExploreMapControlsProps> = ({ onSearch }) => 
                   {dropdownVisible2 && (
                       <div className="checkbox-list flex-col">
                         <FormControlLabel
-                          control={<Checkbox />}
+                          control={<Checkbox size="small"/>}
                           label={<div className="checkbox-label-container">
                             <span className="checkbox-label-text">Closed/Blocked Roads</span>
                           </div>}
                         />
                         <FormControlLabel
-                          control={<Checkbox />}
+                          control={<Checkbox size="small"/>}
                           label={<div className="checkbox-label-container">
                             <span className="checkbox-label-text">Environmental Hazards</span>
                             <span className="checkbox-description">(e.g. Trees, Landslides)</span>
                           </div>}
                         />
                         <FormControlLabel
-                          control={<Checkbox />}
+                          control={<Checkbox size="small"/>}
                           label={<div className="checkbox-label-container">
                             <span className="checkbox-label-text">Man-made Structures</span>
                             <span className="checkbox-description">(e.g. Buildings, Houses, Utility Poles)</span>
