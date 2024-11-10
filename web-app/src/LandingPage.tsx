@@ -7,6 +7,16 @@ function LandingPage() {
   const mainContentRef = useRef<HTMLDivElement | null>(null);       // ref for Main Content Area
   const downloadMobileAppRef = useRef<HTMLDivElement | null>(null); // ref for Download Mobile App
 
+  const copyEmail = () => {
+    navigator.clipboard.writeText("safepath@proton.me");
+    alert("Email address copied to clipboard!");
+  };
+
+  const copyPhone = () => {
+    navigator.clipboard.writeText("9655076304");
+    alert("Phone number copied to clipboard!");
+  };
+
   // Scroll function for the "Explore Features" button
   const scrollToMainContent = () => {
     mainContentRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,12 +54,6 @@ function LandingPage() {
     features[(startIndex + 1) % features.length],
     features[(startIndex + 2) % features.length],
   ];
-
-  // Copy email function
-  const copyEmail = () => {
-    navigator.clipboard.writeText("safepath@proton.me");
-    alert("Email address copied to clipboard!");
-  }; 
 
   return (
     <div className="min-h-screen bg-white">
@@ -257,14 +261,14 @@ function LandingPage() {
 
           <div className="contact-us-container">
             <div className="contact-us-text">CONTACT US</div>
-            <div className="contact-email">
+            <button className="contact-email" onClick={copyEmail}>
               <span className="material-icons mail-icon">mail</span>
-              <span className="email-text">safepath@proton.me</span>
-            </div>
-            <div className="contact-phone mt-[17px]">
+              <span className="email-text hover:text-[#AAD400]">safepath@proton.me</span>
+            </button>
+            <button className="contact-phone mt-[17px]" onClick={copyPhone}>
               <span className="material-icons call-icon">call</span>
-              <span className="phone-text">+63 965 507 6304</span>
-            </div>
+              <span className="phone-text hover:text-[#AAD400]">+63 965 507 6304</span>
+            </button>
           </div>
           
           <div className="about-text-container">
