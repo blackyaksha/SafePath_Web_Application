@@ -2,13 +2,30 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import './LandingPage.css';
 import SignInModal from './Modal Components/SignIn'; // Import SignIn Modal
+import SignUpModal from './Modal Components/SignUp'; // Import SignIn Modal
 
 function LandingPage() {
 
   const [isSignInOpen, setSignInOpen] = useState(false);
+  const [isSignUpOpen, setSignUpOpen] = useState(false);
 
-  const openSignInModal = () => setSignInOpen(true);
-  const closeSignInModal = () => setSignInOpen(false);
+  const openSignUpModal = () => {
+    setSignUpOpen(true);
+    setSignInOpen(false);
+  };
+
+  const openSignInModal = () => {
+    setSignInOpen(true);
+    setSignUpOpen(false);
+  };
+
+  const closeSignUpModal = () => {
+    setSignUpOpen(false);
+  };
+
+  const closeSignInModal = () => {
+    setSignInOpen(false);
+  };
 
   const mainContentRef = useRef<HTMLDivElement | null>(null);       // ref for Main Content Area
   const downloadMobileAppRef = useRef<HTMLDivElement | null>(null); // ref for Download Mobile App
@@ -112,7 +129,9 @@ function LandingPage() {
               Sign in
             </button>
             <button 
-              className="header-rightSide-buttons text-[#000000] hover:text-[#AAD400]">
+              className="header-rightSide-buttons text-[#000000] hover:text-[#AAD400]"
+              onClick={openSignUpModal}  // Open Sign In Modal
+              >
               Create an account
             </button>
           </div>
@@ -317,8 +336,19 @@ function LandingPage() {
         </div>
       </footer>
 
+      {/* Sign Up Modal */}
+      <SignUpModal
+        isOpen={isSignUpOpen}
+        onClose={closeSignUpModal}
+        onSwitchToSignIn={openSignInModal} // Pass the function to switch to Sign In
+      />
+
       {/* Sign In Modal */}
-      <SignInModal isOpen={isSignInOpen} onClose={closeSignInModal} />
+      <SignInModal
+        isOpen={isSignInOpen}
+        onClose={closeSignInModal}
+        onSwitchToSignUp={openSignUpModal} // Pass the function to switch to Sign Up
+      />
 
     </div>
   );

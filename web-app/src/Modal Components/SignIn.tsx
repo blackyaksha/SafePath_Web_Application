@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './SignIn.css';
 
-const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
+const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToSignUp: () => void }> = ({
   isOpen,
   onClose,
+  onSwitchToSignUp,
 }) => {
+
+  const handleSwitchToSignUp = (e: React.MouseEvent) => {
+    e.preventDefault();  // Prevent the default behavior
+    e.stopPropagation();  // Stop the event from propagating and closing the modal
+    onSwitchToSignUp();
+  };
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -94,7 +101,7 @@ const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
           <button type="submit" className="signIn-button">Sign In</button>
 
           <div className="new-to-safepath">
-            New to SafePATH? <a href="#" className="create-account-link">Create an account</a>
+            New to SafePATH? <a href="#" onClick={handleSwitchToSignUp} className="create-account-link">Create an account</a>
           </div>
         </form>
       </div>
