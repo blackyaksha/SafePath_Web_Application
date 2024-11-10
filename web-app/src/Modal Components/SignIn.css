@@ -1,0 +1,212 @@
+/* Modal overlay that covers the screen */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 47, 45, 0.8); /* 70% transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 556px;
+    height: 522px; /* Keep this height */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Close button */
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Form fields */
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form fields */
+    justify-content: center; /* Vertically center the fields */
+    width: 100%;
+    height: 100%; /* Ensure the form takes full height of modal content */
+  }
+  
+  .form-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Placeholder text color for input fields */
+.sign-in-form input::placeholder {
+    color: #CECECE; /* Adjust the color to your preferred shade */
+  }
+  
+
+  .sign-in-form input {
+    width: 439px; /* Reduced width for better centering */
+    padding: 10px;
+    height: 60px;
+    border: 1px solid #CECECE;
+    font-size: 15px;
+    border-radius: 10px 10px 0 0; /* Top-left and top-right border radius */
+    font-family: 'Inter', sans-serif;
+  }
+  .sign-in-form input[type="password"] {
+    border-radius: 0 0 10px 10px; /* Remove the top border radius for password input */
+  }
+  
+  /* Sign-in button */
+  .signIn-button {
+    width: 439px; /* Reduced width for centering */
+    height: 60px;
+    padding: 12px;
+    background-color: #302F2D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-top: 22px; /* Space between input fields and button */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .signIn-button:hover {
+    background-color: #AAD400;
+  }
+  
+/* "or" text styling with lines on both sides */
+.or-text {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #787776;
+    margin: 20px 0; /* Adds space around the text */
+    display: flex;
+    align-items: center; /* Ensures vertical centering of text and lines */
+    justify-content: center; /* Centers the text horizontally */
+  }
+  
+  .or-text::before,
+  .or-text::after {
+    content: '';
+    display: block;
+    width: 139.03px; /* Width of the line */
+    height: 1px; /* Thickness of the line */
+    background-color: #CECECE; /* Color of the line */
+  }
+  
+  .or-text::before {
+    margin-right: 10px; /* Space between the line and the "or" text */
+  }
+  
+  .or-text::after {
+    margin-left: 10px; /* Space between the line and the "or" text */
+  }
+  
+  /* Google Sign-In Button */
+.google-sign-in-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px; /* Space between the Google sign-in button and "or" text */
+  }
+  
+  .google-sign-in-img {
+    width: 439px; /* Set the width of the Google sign-in image */
+    height: auto;
+  }
+
+  /* Sign in title */
+.sign-in-title {
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 650;
+    color: black;
+    margin-bottom: 27px; /* Adds space between the title and Google sign-in button */
+    text-align: center; /* Centers the text */
+  }
+
+/* Forgot password link */
+.forgot-password {
+    width: 439px; /* Align with password input width */
+    text-align: right; /* Align text to the right */
+    margin-top: 7px; /* Add slight spacing above */
+  }
+  
+  .forgot-password a {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #787776;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* New to SafePATH text */
+.new-to-safepath {
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #787776;
+    margin-top: 21px; /* Space above the text */
+    text-align: center; /* Center-align the text */
+  }
+
+  .new-to-safepath a {
+    color: #AAD400; /* Blue color for the link */
+    margin-left: 5px; /* Space between "New to SafePATH?" and "Create an account" */
+    text-decoration: underline; /* Underline for the link */
+    cursor: pointer;
+  }
+
+  .password-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 439px;
+  }
+  
+  .password-input-container input {
+    width: 100%;
+    padding: 15px;
+    height: 60px;
+    border: 1px solid #cecece;
+    font-size: 15px;
+    border-radius: 0 0 10px 10px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .visibility-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: #787776;
+  }
