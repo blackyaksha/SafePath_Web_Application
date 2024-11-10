@@ -1,8 +1,14 @@
 import React from 'react';
 import { useRef, useState } from 'react';
 import './LandingPage.css';
+import SignInModal from './Modal Components/SignIn'; // Import SignIn Modal
 
 function LandingPage() {
+
+  const [isSignInOpen, setSignInOpen] = useState(false);
+
+  const openSignInModal = () => setSignInOpen(true);
+  const closeSignInModal = () => setSignInOpen(false);
 
   const mainContentRef = useRef<HTMLDivElement | null>(null);       // ref for Main Content Area
   const downloadMobileAppRef = useRef<HTMLDivElement | null>(null); // ref for Download Mobile App
@@ -100,7 +106,9 @@ function LandingPage() {
           {/* Right-aligned buttons outside the main container */}
           <div className="absolute right-[-500px] top-0 h-16 flex items-center space-x-9">
             <button 
-              className="header-rightSide-buttons text-[#AAD400] hover:text-[#C4C98C] sign-in-button">
+              className="header-rightSide-buttons text-[#AAD400] hover:text-[#C4C98C] sign-in-button"
+              onClick={openSignInModal}  // Open Sign In Modal
+              >
               Sign in
             </button>
             <button 
@@ -212,7 +220,7 @@ function LandingPage() {
                   className="h-[49px]" 
                 />
               </a>
-              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+              <a href="https://f-droid.org/en/" target="_blank" rel="noopener noreferrer">
                 <img 
                   src="/section-display-images/FDroidDownloadButton.png" 
                   alt="Get it on F-Droid" 
@@ -308,6 +316,9 @@ function LandingPage() {
           />
         </div>
       </footer>
+
+      {/* Sign In Modal */}
+      <SignInModal isOpen={isSignInOpen} onClose={closeSignInModal} />
 
     </div>
   );
