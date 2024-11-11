@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, Text, View, Image, ImageBackground } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../constants';
-import CustomButton from "../components/CustomButton";
+import CustomButton from '../components/CustomBotton';
 import { Redirect, router } from 'expo-router';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
                     justifyContent: 'center', // Center content vertically
                 }}
             >
-                <View className="w-full flex-0.5 min-h-[100px] justify-center mt-3 items-center h-full px-8">
+                <View className="w-full flex-0.5 min-h-[100px] justify-center mt-3 items-center min-h h-full px-8">
                     
                     <Image
                         source={images.logo}

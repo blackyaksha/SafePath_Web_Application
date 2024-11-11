@@ -1,6 +1,9 @@
 import home from "../assets/icons/home.png";
+import eye from "../assets/icons/eye.png";
+import eyehide from "../assets/icons/eyehide.png";
 import plus from "../assets/icons/plus.png";
 import profile from "../assets/icons/profile.png";
+import mail from "../assets/icons/mail.png";
 import leftArrow from "../assets/icons/left-arrow.png";
 import menu from "../assets/icons/menu.png";
 import search from "../assets/icons/search.png";
@@ -21,11 +24,14 @@ export default {
   play,
   home,
   plus,
+  mail,
   profile,
   leftArrow,
   menu,
   search,
   upload,
   rightArrow,
+  eyehide,
+  eye,
   logout,
 };
