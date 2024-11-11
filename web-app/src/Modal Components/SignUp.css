@@ -233,11 +233,12 @@
     font-size: 15px;
     border-radius: 10px;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 8px;
   }
   
   .visibility-icon {
     position: absolute;
-    top: 38%;
+    top: 43%;
     right: 20px;
     transform: translateY(-50%);
     cursor: pointer;
@@ -253,4 +254,5 @@
     max-width: 439px;
     margin-bottom: 15px;
   }
+  
   

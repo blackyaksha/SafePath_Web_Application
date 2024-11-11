@@ -1,11 +1,38 @@
 import React from 'react';
-import { useRef, useState } from 'react';
-import './LandingPage.css';
-import SignInModal from './Modal Components/SignIn'; // Import SignIn Modal
-import SignUpModal from './Modal Components/SignUp'; // Import SignIn Modal
+import { useState } from 'react';
+import './ReportHazards.css';
+import SignInModal from '../Modal Components/SignIn'; // Import SignIn Modal
+import SignUpModal from '../Modal Components/SignUp'; // Import SignIn Modal
+import { Radio, styled, RadioGroup, FormControlLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 
-function LandingPage() {
+function ReportHazard() {
 
+    const [selectedHazard, setSelectedHazard] = useState<string>(''); // State for selected hazard type
+
+    const [category, setCategory] = useState('');
+
+    const handleChange = (event: SelectChangeEvent<string>) => {
+      setCategory(event.target.value);
+    };
+
+    // Handle radio button selection
+    const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSelectedHazard((event.target as HTMLInputElement).value);
+    };
+
+    const StyledRadio1 = styled(Radio)(({ theme }) => ({
+        padding: theme.spacing(1),  // Adjust padding to reduce button size
+        "& .MuiSvgIcon-root": {
+            fontSize: "20px",  // Set smaller icon size
+        },
+        '&.Mui-checked': {
+            color: '#AAD400', // Set the color when the radio button is selected
+          },
+          '&.MuiRadio-root': {
+            color: '#000000', // Default color
+          },
+        }));
+        
   const [isSignInOpen, setSignInOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
 
@@ -27,9 +54,6 @@ function LandingPage() {
     setSignInOpen(false);
   };
 
-  const mainContentRef = useRef<HTMLDivElement | null>(null);       // ref for Main Content Area
-  const downloadMobileAppRef = useRef<HTMLDivElement | null>(null); // ref for Download Mobile App
-
   const copyEmail = () => {
     navigator.clipboard.writeText("safepath@proton.me");
     alert("Email address copied to clipboard!");
@@ -39,44 +63,6 @@ function LandingPage() {
     navigator.clipboard.writeText("9655076304");
     alert("Phone number copied to clipboard!");
   };
-
-  // Scroll function for the "Explore Features" button
-  const scrollToMainContent = () => {
-    mainContentRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Scroll function for the "Download Mobile App" button
-  const scrollToDownloadMobileApp = () => {
-    downloadMobileAppRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Array of features to display in circular motion
-  const features = [
-    "3D MAP VIEW", "OPTIMIZE EVACUATION ROUTES", 
-    "VIEW & SIMULATE HAZARDS", 
-    "IDENTIFY AREAS & ENTITIES AFFECTED BY HAZARDS", 
-    "REPORT EXISTING & POTENTIAL HAZARDS"
-  ];
-  const [startIndex, setStartIndex] = useState(0); // Start index for visible features
-
-
-  // Handle circular navigation
-  const handleNext = () => {
-    setStartIndex((prevIndex) => (prevIndex + 1) % features.length);
-  };
-
-  const handlePrevious = () => {
-    setStartIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
-  };
-
-  // Calculate the displayed features based on the current index
-  const visibleFeatures = [
-    features[(startIndex + 3) % features.length],
-    features[(startIndex + 4) % features.length],
-    features[startIndex],
-    features[(startIndex + 1) % features.length],
-    features[(startIndex + 2) % features.length],
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -109,9 +95,7 @@ function LandingPage() {
                 About
               </button>
               <button 
-                className="header-container-buttons text-white hover:text-[#AAD400]"
-                onClick={() => window.open('/report-a-hazard', '_blank')}
-              >
+                className="header-container-buttons text-white hover:text-[#AAD400]">
                 Report a hazard
               </button>
                 <a 
@@ -147,119 +131,76 @@ function LandingPage() {
         
         {/* Text in the center left of the hero section */}
         <div className="absolute left-20 top-1/2 transform -translate-y-1/2">
-          <h1 className="Hero-Section-HeaderText text-black">Optimize your way out of disasters</h1>
-          <h2 className="Hero-Section-SubheadingText text-black mt-3">Utilize our advanced mapping technology for safer evacuations.</h2>
-
+          <h1 className="Main-Section-HeaderText text-black">
+            Help us keep<br/>communities safe
+          </h1>
+          <h2 className="Main-Section-SubheadingText text-black mt-3">
+            Use this form to report hazards in your area to help us<br/>improve our hazard maps.
+          </h2>
+        </div>
         
-          <div className="flex items-center">
-            {/* Button for Open Simulation Tool */}
-            <button 
-              className="open-simulation-button hover:bg-[#302F2D] hover:text-[#dddddd]"
-              onClick={() => window.open('/simulation-tool', '_blank')}
-            >
-              <span>Open Simulation Tool</span>
-              <span className="material-icons icon">arrow_outward</span>
-            </button>
-            <button 
-              className="explore-features-button text-[#000000] hover:text-[#AAD400]"
-              onClick={scrollToMainContent}  // Attach scroll function
-            >
-              <span>Explore Features</span>
-            </button>  
-            <button 
-              className="download-mobileApp-button flex items-center text-[#AAD400] hover:text-[#C4C98C]"
-              onClick={scrollToDownloadMobileApp}  // Attach scroll function
-            >
-              <span className="material-icons icon">phone_android</span>
-              <span>Download Mobile App</span>
-            </button>  
-          </div>
-        </div>
-      </section>
+        {/* White container on the right side */}
+        <div className="report-form absolute right-20 top-1/2 transform -translate-y-1/2 bg-white p-8 rounded-lg">
+            <div className='report-container'>
+                {/* You can add any content inside the white container */}
+                <h3 className="reportForm-header text-black font-semibold text-lg">Report a hazard</h3>
+                {/* Add form or other content here */}
 
-      {/* Main Content Area: Displays features */}
-      <section className="flex items-center justify-center min-h-screen bg-white" ref={mainContentRef}>
-        <div className="text-center">
-          <h2 className="features-text">Features</h2>
-          
-          <div className="flex items-center justify-center space-x-20 mt-8">
-            {/* Container for video demo */}
-            <div className="demo-container">
-              {/* Placeholder for video demo */}
+
+                {/* Gray container below the text */}
+                <div 
+                className="reportForm-subheading bg-gray-300 text-center flex items-center justify-center"
+                style={{ height: '41px', width: '439px', marginTop: '20px' }}
+                >
+                <span className="">
+                    Section 1: Select hazard type
+                </span>
+                </div>
+
+                <RadioGroup name="hazardType" className="report-radio-group" value={selectedHazard} onChange={handleRadioChange}>
+                  
+                  <FormControlLabel value="flood" control={<StyledRadio1 />} label="Flood" />
+                  <FormControlLabel value="debris" control={<StyledRadio1 />} label="Debris" />
+
+                    {/* Conditionally render dropdown when "Debris" is selected */}
+                    {selectedHazard === 'debris' && (
+                        <div className="dropdown-container">
+                        <Select
+                            value={category} // Controls the selected value
+                            onChange={handleChange} 
+                            defaultValue=""
+                            displayEmpty
+                            style={{
+                            width: 201,
+                            height: 28,
+                            fontSize: '12px',
+                            color: '#787776',
+                            borderRadius: '5px',
+                            borderColor: '#CECECE',
+                            fontFamily: 'Inter',
+                            }}
+                        >
+                            <MenuItem value="" disabled>Select category</MenuItem> {/* Placeholder */}
+                            <MenuItem value={1}>Existing</MenuItem>
+                            <MenuItem value={2}>Potential</MenuItem>
+                        </Select>
+                        </div>
+                    )}
+
+                  <FormControlLabel value="other" control={<StyledRadio1 />} label="Other" />
+                  
+                </RadioGroup>
+
+                <button 
+                    className="next-button text-[#000000] hover:text-[#AAD400]"
+                    >
+                    Next
+                    <span className="material-icons icon">arrow_forward</span>
+                </button>
+
             </div>
-
-            {/* Feature navigation and stack */}
-            <div className="feature-navigation-container text-center">
-              <button onClick={handlePrevious} className="navigate-button mb-6">
-                <span className="material-icons">navigate_before</span>
-              </button>
-
-              <div className={`feature-stack`}>
-                {visibleFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`feature-item feature-size-${index === 2 ? 'large' : index === 1 || index === 3 ? 'medium' : 'small'}`}
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
-
-              <button onClick={handleNext} className="navigate-button mt-6">
-                <span className="material-icons">navigate_next</span>
-              </button>
-            </div>
-          </div>
         </div>
-      </section>
 
-      {/* Download Mobile App: Displays Download Link for Mobile App */}
-      <section 
-        className="flex items-center justify-center min-h-screen bg-white"
-        ref={downloadMobileAppRef}
-      >
-        <div className="flex items-center space-x-40">
-          {/* Text Section */}
-          <div className="text-left">
-            <h2 className="download-mobileApp-headingText text-black mt-7 mb-2">Preparedness in your pocket</h2>
-            <p className="download-mobileApp-subheadingText text-black mt-3">Get the latest optimized evacuation routes at your fingertips.</p>
-            <p className="download-mobileApp-subheadingText text-black">Download our mobile app now!</p>
-
-            {/* Download Buttons */}
-            <div className="flex space-x-5 mt-10">
-              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="/section-display-images/AppStoreDownloadButton.png" 
-                  alt="Download on the App Store" 
-                  className="h-[49px]" 
-                />
-              </a>
-              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="/section-display-images/GooglePlayDownloadButton.png" 
-                  alt="Get it on Google Play" 
-                  className="h-[49px]" 
-                />
-              </a>
-              <a href="https://f-droid.org/en/" target="_blank" rel="noopener noreferrer">
-                <img 
-                  src="/section-display-images/FDroidDownloadButton.png" 
-                  alt="Get it on F-Droid" 
-                  className="h-[49px]" 
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Image Section */}
-          <div>
-            <img 
-              src={"/section-display-images/MobileAppSplashScreen.png"} 
-              alt="Mobile App Splash Screen" 
-              className="mobileAppSplashScreen h-[590px] w-[288.59px]" 
-            />
-          </div>
-        </div>
       </section>
 
       {/* Footer - Fixed footer at the bottom of the page */}
@@ -356,4 +297,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default ReportHazard;
