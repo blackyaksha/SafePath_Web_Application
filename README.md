@@ -9,7 +9,7 @@ The **web application** allows administrators to access hazard forecasts and det
 
 The **mobile application** delivers hazard notifications and displays the optimized evacuation routes, guiding users to safety. Together, these components enhance disaster preparedness and response for both administrators and the public.
 
-**NOTE: This is the main README file for the SafePath project.**
+**NOTE: This is the project's main README file**
 
 ##
 
