@@ -5,10 +5,6 @@
 
 SafePath is a system designed to optimize evacuation routes using advanced metaheuristic algorithms, represented through a digital representation of the physical environment. The project consists of three key components: the digital twin model, a web application for administrators, and a mobile app for community users.
 
-The **web application** allows administrators to access hazard forecasts and determine the most efficient evacuation routes through data analysis and mapping tools, improving decision-making and enabling rapid emergency responses.
-
-The **mobile application** delivers hazard notifications and displays the optimized evacuation routes, guiding users to safety. Together, these components enhance disaster preparedness and response for both administrators and the public.
-
 **NOTE: This is the project's main README file.**
 
 ##
