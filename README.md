@@ -15,16 +15,14 @@ SafePath is a system designed to optimize evacuation routes using advanced metah
 ##
 
 ### Contents
-[I. Overview]()<br>
-[II. Features]()<br>
-[III. Web App]()<br>
-[IV. Mobile App]()<br>
-[V. Important Reminders]()<br>
+[I. Features]()<br>
+[II. Web App]()<br>
+[III. Mobile App]()<br>
+[IV. Important Reminders]()<br>
 
 ##
 
-### I. Overview
-### II. Features
-### III. Web App
-### IV. Mobile App
-### V. Important Reminders
+### I. Features
+### II. Web App
+### III. Mobile App
+### IV. Important Reminders
