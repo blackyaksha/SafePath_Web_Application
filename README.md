@@ -15,10 +15,10 @@ SafePath is a system designed to optimize evacuation routes using advanced metah
 ##
 
 ### Contents
-[I. Features]()<br>
-[II. Web App]()<br>
-[III. Mobile App]()<br>
-[IV. Important Reminders]()<br>
+[I. Features](https://github.com/m3mentomor1/SafePath?tab=readme-ov-file#i-features)<br>
+[II. Web App](https://github.com/m3mentomor1/SafePath?tab=readme-ov-file#ii-web-app)<br>
+[III. Mobile App](https://github.com/m3mentomor1/SafePath?tab=readme-ov-file#iii-mobile-app)<br>
+[IV. Important Reminders](https://github.com/m3mentomor1/SafePath?tab=readme-ov-file#iv-important-reminders)<br>
 
 ##
 
