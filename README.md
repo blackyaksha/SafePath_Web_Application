@@ -6,7 +6,7 @@
 ##
 <div align="center">
   <em><strong>Optimize your way out of disasters.</strong></em>
-</div><br><br>
+</div><br><br><br>
 
 SafePath is a system designed to optimize evacuation routes using advanced metaheuristic algorithms, represented through a digital representation of the physical environment. The project consists of three key components: the digital twin model, a web application for administrators, and a mobile app for community users.
 
