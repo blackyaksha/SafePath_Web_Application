@@ -1,0 +1,47 @@
+{
+    "starting_location_coordinates": [14.6215196,121.0531739],
+    "evacuation_areas": [
+        {
+            "area_id": "DestinationEvacArea1",
+            "destination_coordinates": [14.6259492,121.0622352],
+            "routes": [
+                {
+                    "route_id": "Route1",
+                    "distance": 1.5,
+                    "hazard_zones": 4,
+                    "flood_depth": 0.5
+                },
+                {
+                    "route_id": "Route2",
+                    "distance": 1.6,
+                    "hazard_zones": 2,
+                    "flood_depth": 0.7
+                }
+            ]
+        },
+        {
+            "area_id": "DestinationEvacArea2",
+            "destination_coordinates": [14.6213392,121.0578776],
+            "routes": [
+                {
+                    "route_id": "Route1",
+                    "distance": 1.9,
+                    "hazard_zones": 2,
+                    "flood_depth": 0.3
+                },
+                {
+                    "route_id": "Route2",
+                    "distance": 1.4,
+                    "hazard_zones": 4,
+                    "flood_depth": 0.6
+                },
+                {
+                    "route_id": "Route3",
+                    "distance": 9.5,
+                    "hazard_zones": 4,
+                    "flood_depth": 0.6
+                }
+            ]
+        }
+    ]
+}
