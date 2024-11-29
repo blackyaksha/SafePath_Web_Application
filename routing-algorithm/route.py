@@ -1,7 +1,7 @@
 import json
 import folium
 
-# Load the optimized route from output.json
+# Load the optimized route from output-aco.json
 with open('routing-algorithm/output-aco.json', 'r') as f:
     output_data = json.load(f)
 
