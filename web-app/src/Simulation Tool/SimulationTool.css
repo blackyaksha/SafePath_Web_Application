@@ -1,314 +1,442 @@
 /* SimulationTool.css */
 
 .simulation-container {
-    display: flex; /* Use flexbox to align side panel and main content */
-  }
-  
-  .simulation-container .side-panel {
-    width: 85px; /* Try a larger width */
-  }
-  
-  .side-panel {
-    background-color: white; /* Set background color for the side panel */
-    width: 80px; /* Width of the side panel */
-    height: 100vh; /* Full height */
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Drop shadow */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column; /* Stack buttons vertically */
-    padding-top: 20px;
-  }
-  
-  .icon-button {
-    background: none; /* No background */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    outline: none; /* No outline */
-    margin: 15px 0; /* Add vertical spacing between buttons */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Combine icon and text hover effects */
-  .icon-button:hover .material-icons,
-  .icon-button:hover .icon-text {
-    color: #AAD400; /* Change color on hover */
-    transition: color 0.2s; 
-  }
-  
-  .icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .icon-text {
-    font-size: 8px; /* Updated to match your requirement */
-    color: black; /* Default text color */
-    margin-top: 4px; /* Adds a small space between the icon and text */
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-  }
-  
-  .icon-button .material-icons {
-    font-size: 30px; /* Icon size */
-    color: #000; /* Icon color */
-  }
-  
-  .main-content {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
-    flex-grow: 1; /* Take the remaining width */
-    height: 100vh; /* Full height */
-    position: relative; /* Allow positioning of absolute children */
-  }
-  
+  display: flex; /* Use flexbox to align side panel and main content */
+}
+
+.simulation-container a {
+  color: #0078a8;
+  text-decoration: none;
+}
+
+.simulation-container a:hover {
+  text-decoration: underline;
+}
+
+.simulation-container .side-panel {
+  width: 85px; /* Try a larger width */
+}
+
+.side-panel {
+  background-color: white; /* Set background color for the side panel */
+  width: 80px; /* Width of the side panel */
+  height: 100vh; /* Full height */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Drop shadow */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column; /* Stack buttons vertically */
+  padding-top: 20px;
+}
+
+.icon-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* No outline */
+  margin: 15px 0; /* Add vertical spacing between buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Combine icon and text hover effects */
+.icon-button:hover .material-icons,
+.icon-button:hover .icon-text {
+  color: #aad400; /* Change color on hover */
+  transition: color 0.2s;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-text {
+  font-size: 8px; /* Updated to match your requirement */
+  color: black; /* Default text color */
+  margin-top: 4px; /* Adds a small space between the icon and text */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.icon-button .material-icons {
+  font-size: 30px; /* Icon size */
+  color: #000; /* Icon color */
+}
+
+.main-content {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  flex-grow: 1; /* Take the remaining width */
+  height: 100vh; /* Full height */
+  position: relative; /* Allow positioning of absolute children */
+  overflow: hidden;
+}
+
 /* Wrapper for search bar and extra container */
 .explore-map-controls {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    width: 287px; /* Match the width of the search bar */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 287px; /* Match the width of the search bar */
 }
 
 /* Styling for the search bar input */
+.routing-searchBar {
+  width: 100%; /* Match the width of the container */
+  height: 37px;
+  padding: 5px 35px 5px 34px; /* Right padding for the icon */
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  font-size: 12.5px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.radius-input {
+  width: 80%; /* Match the width of the container */
+  height: 37px;
+  padding: 5px 10px 5px 10px; /* Right padding for the icon */
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  font-size: 12.5px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Add styles for the publish button container */
+.publish-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  padding-right: 10px;
+}
+
+.publish-button {
+  display: flex;
+  align-items: center;
+  height: 31px;
+  padding: 0 63px;
+  background-color: #302f2d;
+  color: white;
+  border: 1px solid #cecece;
+  border-radius: 6.5px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 9px;
+  transition: background-color 0.2s;
+}
+
+.publish-button:hover {
+  background-color: #444341;
+}
+
+/* Style for the Material Icons */
+.publish-button .material-icons {
+  font-size: 15px !important; /* Reduce size */
+  color: white !important; /* Force white color */
+  margin-left: 2px; /* Space between text and icon */
+}
+
+/* Add this to SimulationTool.css */
+.radius-search-button {
+  height: 37px;
+  padding: 0 15px;
+  background-color: #302f2d;
+  color: white;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 9px;
+  transition: background-color 0.2s;
+}
+
+.radius-search-button:hover {
+  background-color: #444341;
+}
+
 .explore-features-searchBar {
-    width: 100%; /* Match the width of the container */
-    height: 41px;
-    padding: 5px 35px 5px 10px; /* Right padding for the icon */
-    border: 2px solid #CECECE;
-    border-radius: 10px;
-    font-size: 13px;
-    outline: none;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    background-color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
+  width: 100%; /* Match the width of the container */
+  height: 37px;
+  padding: 5px 35px 5px 10px; /* Right padding for the icon */
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  font-size: 12.5px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.radius-searchBar {
+  width: 100%; /* Match the width of the container */
+  height: 30px;
+  padding: 5px 10px 5px 10px; /* Right padding for the icon */
+  border: 2px solid #cecece;
+  border-radius: 8px;
+  font-size: 11px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
 }
 
 /* Container for the search bar and icon */
 .search-bar-container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 /* Search icon button positioned inside the search bar */
 .search-icon-button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    color: #888; /* Icon color */
-    display: flex;
-    align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #888; /* Icon color */
+  display: flex;
+  align-items: center;
 }
 
 .search-icon-button .material-icons {
-    font-size: 20px;
-    color: #888;
+  font-size: 20px;
+  color: #888;
 }
 
 .search-icon-button:hover .material-icons {
-    color: #555; /* Change icon color on hover */
+  color: #555; /* Change icon color on hover */
 }
 
 /* New container under the search bar */
 .display-control {
-    width: 100%; /* Match the width of the search bar */
-    height: 115px; /* Fixed height */
-    background-color: #FFFFFF; /* Light background color */
-    margin-top: 12px; /* Small gap between search bar and extra container */
-    border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+  width: 100%; /* Match the width of the search bar */
+  height: 115px; /* Fixed height */
+  background-color: rgba(255, 255, 255, 0.85); /* Light background color */
+  margin-top: 12px; /* Small gap between search bar and extra container */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+}
+
+.report-control {
+  width: 100%; /* Adjust width to be proportional */
+  height: 200px; /* Slightly taller */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content */
+  align-items: center;
+  padding: 20px; /* More space inside */
+  text-align: center; /* Center text */
+}
+
+.report-button:hover {
+  transform: scale(1.03); /* ✅ Slight increase in size */
+  transition: transform 0.2s ease-in-out;
 }
 
 .display-control-header {
-    width: 100%; /* Match the width of the search bar */
-    height: 37px; /* Fixed height */
-    background-color: #302F2D; /* Light background color */
-    border-radius: 10px; /* Optional rounded corners */
-    border: 2px solid #CECECE;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+  width: 100%; /* Match the width of the search bar */
+  height: 37px; /* Fixed height */
+  background-color: #302f2d; /* Light background color */
+  border-radius: 10px; /* Optional rounded corners */
+  border: 2px solid #cecece;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-  
-  .map-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align to the left */
-    margin: 20px; /* Space from the top */
-  }
+.map-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left */
+  margin: 20px; /* Space from the top */
+}
 
 .hazard-assessment-control {
-    width: 100%; /* Match the width of the search bar */
-    background-color: #FFFFFF; /* Light background color */
-    margin-top: 0px; /* Small gap between search bar and extra container */
-    border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  width: 100%; /* Match the width of the search bar */
+  background-color: #ffffff; /* Light background color */
+  margin-top: 0px; /* Small gap between search bar and extra container */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .hazard-assessment-header {
-    width: 100%; /* Match the width of the search bar */
-    height: 37px; /* Fixed height */
-    background-color: #302F2D; /* Light background color */
-    border-radius: 10px; /* Optional rounded corners */
-    border: 2px solid #CECECE;
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+  width: 100%; /* Match the width of the search bar */
+  height: 37px; /* Fixed height */
+  background-color: #302f2d; /* Light background color */
+  border-radius: 10px; /* Optional rounded corners */
+  border: 2px solid #cecece;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .radio-button-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .hazards-assessment-radio-texts {
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
 }
 
 .forecast-hazards-control {
-    width: 100%; /* Match the width of the search bar */
-    background-color: #FFFFFF; /* Light background color */
-    margin-top: 12px; /* Small gap between search bar and extra container */
-    border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  width: 100%; /* Match the width of the search bar */
+  background-color: rgba(255, 255, 255, 0.85); /* Light background color */
+  margin-top: 12px; /* Small gap between search bar and extra container */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
 }
 
 .forecast-hazards-header {
-    width: 100%; /* Match the width of the search bar */
-    height: 37px; /* Fixed height */
-    background-color: #302F2D; /* Light background color */
-    border-radius: 10px; /* Optional rounded corners */
-    border: 2px solid #CECECE;
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+  width: 100%; /* Match the width of the search bar */
+  height: 37px; /* Fixed height */
+  background-color: #302f2d; /* Light background color */
+  border-radius: 10px; /* Optional rounded corners */
+  border: 2px solid #cecece;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .forecast-hazards-radio-texts {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
 }
 
-.checkbox-label .MuiFormControlLabel-label{
-    font-family: 'Inter', sans-serif;  /* Change the font family */
-    font-size: 12px;  /* Change the font size */
-    font-weight: 600;  /* Make the font bold */
-    color: black;  /* Set text color */
-  }
-  
-  /* Optional: Style the checkbox itself (the box itself) */
-  .checkbox-label .MuiCheckbox-root {
-    padding: 4px;  /* Adjust the size of the checkbox */
-  }
+.hazards-radio-texts {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
 
-  
+.checkbox-label .MuiFormControlLabel-label {
+  font-family: "Inter", sans-serif; /* Change the font family */
+  font-size: 12px; /* Change the font size */
+  font-weight: 600; /* Make the font bold */
+  color: black; /* Set text color */
+}
+
+/* Optional: Style the checkbox itself (the box itself) */
+.checkbox-label .MuiCheckbox-root {
+  padding: 4px; /* Adjust the size of the checkbox */
+}
+
 /* Wrapper for the checkbox label */
 .checkbox-label-container {
-    display: flex;
-    flex-direction: column;  /* Stack the texts vertically */
-    align-items: flex-start;  /* Align the texts to the left */
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Main label text */
-  .checkbox-label-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: black;
-  }
-  
-  /* Additional description text */
-  .checkbox-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;  /* Adjust the font size for the description */
-    color: #7F8C8D;  /* Lighter color for the description */
-    margin-top: 4px;  /* Add space between label and description */
-  }
-  
-  .hazard-assessment-content {  
-    /* Custom scrollbar styling */
-    scrollbar-width: thin;               /* For Firefox */
-    scrollbar-color: #888 transparent;       /* For Firefox */
-  }
-  
-  .hazard-assessment-content::-webkit-scrollbar {
-    width: 8px;                          /* Width of the scrollbar */
-  }
-  
-  .hazard-assessment-content::-webkit-scrollbar-track {
-    background: none;  
-  }
-  
-  .hazard-assessment-content::-webkit-scrollbar-thumb {
-    background-color: #888;              /* Scrollbar color */
-    border-radius: 4px;                  /* Rounded corners */
-  }
-  
-  .debris-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5px;
-  }
-  
-  .debris-option {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .debris-text {
-    font-size: 12px;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600; 
-  }
-  
-  .dropdown-icon {
-    color: #AAD400;
-    cursor: pointer;
-  }
-  
-  .debris-option:hover .dropdown-icon {
-    color: #AAD400;  /* Change the color of the dropdown icon on hover */
-  }
+  display: flex;
+  flex-direction: column; /* Stack the texts vertically */
+  align-items: flex-start; /* Align the texts to the left */
+  font-family: "Inter", sans-serif;
+}
+
+/* Main label text */
+.checkbox-label-text {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Additional description text */
+.checkbox-description {
+  font-family: "Inter", sans-serif;
+  font-size: 9px; /* Adjust the font size for the description */
+  color: #7f8c8d; /* Lighter color for the description */
+  margin-top: 4px; /* Add space between label and description */
+}
+
+.hazard-assessment-content {
+  /* Custom scrollbar styling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 transparent; /* For Firefox */
+}
+
+.hazard-assessment-content::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.hazard-assessment-content::-webkit-scrollbar-track {
+  background: none;
+}
+
+.hazard-assessment-content::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.debris-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5px;
+}
+
+.debris-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.debris-text {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.dropdown-icon {
+  color: #aad400;
+  cursor: pointer;
+}
+
+.debris-option:hover .dropdown-icon {
+  color: #aad400; /* Change the color of the dropdown icon on hover */
+}
 
 /* Targeting the label inside the specific RadioGroup */
 .custom-radio-group .MuiFormControlLabel-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
 
 /* Apply custom styles to the labels inside the checkbox-list */
 .checkbox-list .custom-checkbox-label .MuiFormControlLabel-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
@@ -354,14 +482,14 @@
 }
 
 /* Hide the spinner for number inputs */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance: textfield; /* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
 }
 
 .custom-search-input {
@@ -391,26 +519,26 @@ input[type=number] {
 
 /* WebKit browsers */
 .suggestions-container::-webkit-scrollbar {
-    width: 4px; /* Narrow scrollbar width */
+  width: 4px; /* Narrow scrollbar width */
 }
 
 .suggestions-container::-webkit-scrollbar-track {
-    background: transparent; /* Make the track transparent */
+  background: transparent; /* Make the track transparent */
 }
 
 .suggestions-container::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 2px; /* Optional: round the corners */
+  background: #888;
+  border-radius: 2px; /* Optional: round the corners */
 }
 
 .suggestions-container::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+  background: #555;
 }
 
 /* Firefox */
 .suggestions-container {
-    scrollbar-width: thin; /* Thinnest option available in Firefox */
-    scrollbar-color: #888 transparent; /* Thumb color and transparent track */
+  scrollbar-width: thin; /* Thinnest option available in Firefox */
+  scrollbar-color: #888 transparent; /* Thumb color and transparent track */
 }
 
 .suggestions-list {
@@ -422,8 +550,689 @@ input[type=number] {
 .suggestion-item {
   padding: 8px;
   cursor: pointer;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
 }
 
 .suggestion-item-highlighted {
   background-color: #ddd;
+}
+
+.suggestions-container.floating {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1500;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Node Control Panel Styles */
+.node-control-panel {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 600px;
+}
+
+.node-control-header {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.node-control-header h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #302f2d;
+  margin: 0;
+}
+
+.node-items {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: move;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: background-color 0.2s;
+}
+
+.node-item:hover {
+  background-color: #eeeeee;
+}
+
+.node-item span:last-child {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.node-item .material-icons {
+  font-size: 24px;
+}
+
+.profile-select-dropdown {
+  width: 150px; /* Reduced width */
+  height: 30px; /* Reduced height */
+  font-size: 12px; /* Smaller font size */
+  padding: 4px 8px; /* Adjust padding */
+}
+
+.rank-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  width: 72px; /* Ensures proper size */
+  background-color: #bcffb1; /* Same color as your Disabled count container */
+  color: #207f13; /* Matching text color */
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 900;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+/* ✅ New: Three dots loading animation */
+.dots {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dots::after {
+  content: " .";
+  animation: dotsAnimation 1.5s steps(3, end) infinite;
+}
+
+@keyframes dotsAnimation {
+  0% {
+    content: " .";
+  }
+  33% {
+    content: " ..";
+  }
+  66% {
+    content: " ...";
+  }
+  100% {
+    content: " .";
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.light-controller {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 600px;
+  z-index: 1000;
+  padding: 10px; /* Reduced from 12px to 10px for slightly tighter spacing */
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.controller-content {
+  display: flex; /* Use flexbox to place sections side by side */
+  align-items: center;
+}
+
+.light-section {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-right: 0; /* Added to ensure symmetry with map-type-section */
+}
+
+.map-type-section {
+  flex: 1.5; /* Increased from 1 to 1.5 to give more space for three buttons */
+  display: flex; /* Changed from grid to flex for more control */
+  flex-direction: column; /* Column layout with header on top */
+  gap: 6px;
+  margin-left: 0;
+}
+
+.map-type-buttons {
+  display: flex; /* New class to create a flex row for buttons */
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 6px;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 42px; /* Slightly reduced from 44px */
+  background-color: #e0e0e0;
+  margin: 0 12px;
+}
+
+.section-header {
+  color: #302f2d;
+  font-weight: 650;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  text-align: left;
+  grid-column: span 4;
+  margin-bottom: 1px; /* Reduced from 2px to 1px */
+  padding-left: 2px;
+}
+
+.map-section-header {
+  color: #302f2d;
+  font-weight: 650;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  text-align: left;
+  margin-bottom: 1px;
+  padding-left: 2px;
+}
+
+.light-controller button {
+  background: none;
+  border: none;
+  color: #302f2d;
+  font-size: 12px;
+  padding: 3px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-controller button:disabled {
+  color: #a0a0a0;
+  background: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.light-controller button:disabled:hover {
+  background: none; /* Prevent hover background change on disabled buttons */
+}
+
+.light-controller button .material-icons {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 24px;
+}
+
+.light-controller button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.light-controller button.active {
+  background: #302f2d;
+  color: white;
+  font-weight: bold;
+}
+
+.map-type-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #eaeaea;
+  color: #302f2d;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  padding: 0;
+  height: 28px;
+  width: 80px; /* Slightly reduced width to fit three buttons */
+  margin: 0;
+  flex: 1;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.map-type-button .button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.map-type-button .button-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 1),
+    /* Stronger first shadow */ 0px 0px 6px rgba(0, 0, 0, 0.9); /* Second shadow for extra depth */
+  font-weight: 600;
+}
+
+.map-type-button:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-type-button.active {
+  border-color: #302f2d;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+/* Bringing back the white overlay */
+.map-type-button.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ); /* Semi-transparent white overlay */
+  z-index: 1;
+}
+
+.map-type-button.active .button-text {
+  color: #302f2d; /* Dark text for selected button */
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.9),
+    /* Strong white drop shadow */ 0px 0px 5px rgba(255, 255, 255, 0.7); /* Secondary white glow */
+}
+
+.mapboxgl-marker {
+  z-index: 9999 !important;
+}
+
+.light-controller {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px; /* Space between the two containers */
+  z-index: 1000;
+}
+
+.controller-content {
+  display: flex;
+  gap: 12px; /* Space between containers */
+}
+
+/* New container for lighting controls */
+.light-section-container {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px; /* Adjust width as needed */
+}
+
+/* New container for map style controls */
+.map-style-container {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px; /* Adjust width as needed */
+}
+
+.light-section {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.map-type-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Remove the vertical divider as it's no longer needed */
+.vertical-divider {
+  display: none;
+}
+
+/* Rest of your existing styles remain the same */
+.light-controller {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px; /* Space between the two containers */
+  z-index: 1000;
+  background: none; /* Remove the background */
+  box-shadow: none; /* Remove the outer shadow */
+  padding: 0; /* Remove padding */
+}
+
+.controller-content {
+  display: flex;
+  gap: 12px;
+  background: none; /* Remove any background */
+  padding: 0; /* Remove any padding */
+}
+
+/* Styling for the lighting container */
+.light-section-container {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+}
+
+/* Styling for the map style container */
+.map-style-container {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+}
+
+/* Rest of your existing styles remain the same */
+/* Top Center Control Buttons */
+.top-center-controls {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 1000;
+}
+
+.control-button {
+  background: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px; /* Reduced horizontal padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Slightly reduced gap between text and icon */
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #302f2d;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s;
+  min-width: 95px; /* Reduced minimum width */
+}
+
+.control-button:hover {
+  background-color: #f5f5f5;
+}
+
+.control-button .material-icons {
+  font-size: 20px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 8px;
+  z-index: 1000;
+}
+
+.lighting-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  min-width: 200px;
+}
+
+.lighting-menu button {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lighting-menu button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.lighting-menu button.active {
+  background: #302f2d;
+  color: white;
+}
+
+.map-style-menu {
+  display: flex;
+  flex-direction: row; /* Changed from column to row */
+  gap: 8px;
+  min-width: 240px;
+  padding: 8px;
+}
+
+.map-style-menu .map-type-button {
+  flex: 1; /* Make buttons take equal width */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Adjust button image and text positioning */
+.map-style-menu .map-type-button .button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.map-style-menu .map-type-button .button-text {
+  position: relative;
+  z-index: 2;
+  font-size: 11px;
+  color: white; /* Default color for non-active state */
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 1), 0px 0px 6px rgba(0, 0, 0, 0.9);
+}
+
+.map-style-menu .map-type-button.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+
+.map-style-menu .map-type-button.active .button-text {
+  color: #302f2d; /* Dark text for selected button */
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.9),
+    0px 0px 5px rgba(255, 255, 255, 0.7);
+}
+
+.sessions-menu {
+  min-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px 0;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 transparent; /* For Firefox */
+}
+
+/* Webkit scrollbar styling (Chrome, Safari, Edge) */
+.sessions-menu::-webkit-scrollbar {
+  width: 6px; /* Reduced width */
+  height: calc(100% - 20px); /* Reduced height to avoid corner overlap */
+}
+
+.sessions-menu::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px 0; /* Add margin to top and bottom */
+}
+
+.sessions-menu::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+  border: 2px solid transparent; /* Creates padding effect */
+  background-clip: padding-box;
+}
+
+.sessions-menu::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.session-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.session-info {
+  flex-grow: 1;
+}
+
+.session-title {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #302f2d;
+  margin-bottom: 4px;
+}
+
+.session-timestamp {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #666;
+}
+
+.active-indicator {
+  color: #aad400;
+  font-size: 20px;
+}
+
+.no-sessions {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+}
+
+.sessions-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #aad400;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }

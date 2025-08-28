@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import './SignIn.css';
+import React, { useEffect, useState } from "react";
+import "./SignIn.css";
+import { useNavigate } from "react-router-dom";
 
-const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToSignUp: () => void }> = ({
-  isOpen,
-  onClose,
-  onSwitchToSignUp,
-}) => {
+const SignInModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  onSwitchToSignUp: () => void;
+}> = ({ isOpen, onClose, onSwitchToSignUp }) => {
+  const navigate = useNavigate();
 
   const handleSwitchToSignUp = (e: React.MouseEvent) => {
-    e.preventDefault();  // Prevent the default behavior
-    e.stopPropagation();  // Stop the event from propagating and closing the modal
+    e.preventDefault(); // Prevent the default behavior
+    e.stopPropagation(); // Stop the event from propagating and closing the modal
     onSwitchToSignUp();
   };
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSignIn = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sign-in attempt', { email, password });
+    console.log("Sign-in attempt", { email, password });
+    navigate("/home-page");
   };
 
   const togglePasswordVisibility = () => {
@@ -28,7 +31,7 @@ const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToSi
   useEffect(() => {
     if (isOpen) {
       // Push new history state when modal opens
-      window.history.pushState(null, '', window.location.href);
+      window.history.pushState(null, "", window.location.href);
 
       // Listen for "Back" button presses
       const handlePopState = () => {
@@ -36,15 +39,14 @@ const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToSi
       };
 
       // Add the event listener
-      window.addEventListener('popstate', handlePopState);
+      window.addEventListener("popstate", handlePopState);
 
       // Clean up event listener on unmount
       return () => {
-        window.removeEventListener('popstate', handlePopState);
+        window.removeEventListener("popstate", handlePopState);
       };
     }
   }, [isOpen, onClose]);
-
 
   if (!isOpen) return null;
 
@@ -78,30 +80,46 @@ const SignInModal: React.FC<{ isOpen: boolean; onClose: () => void; onSwitchToSi
           <div className="form-password">
             <div className="password-input-container">
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="Password"
-                maxLength={40} 
+                maxLength={40}
               />
               <span
                 className="material-icons icon visibility-icon"
                 onClick={togglePasswordVisibility}
               >
-                {showPassword ? 'visibility_off' : 'visibility'}
+                {showPassword ? "visibility_off" : "visibility"}
               </span>
             </div>
             <div className="forgot-password">
-              <a href="#" onClick={() => {/* Handle forgot password logic */}}>Forgot password?</a>
+              <a
+                href="#"
+                onClick={() => {
+                  /* Handle forgot password logic */
+                }}
+              >
+                Forgot password?
+              </a>
             </div>
           </div>
 
-          <button type="submit" className="signIn-button">Sign In</button>
+          <button type="submit" className="signIn-button">
+            Sign In
+          </button>
 
           <div className="new-to-safepath">
-            New to SafePATH? <a href="#" onClick={handleSwitchToSignUp} className="create-account-link">Create an account</a>
+            New to SafePATH?{" "}
+            <a
+              href="#"
+              onClick={handleSwitchToSignUp}
+              className="create-account-link"
+            >
+              Create an account
+            </a>
           </div>
         </form>
       </div>

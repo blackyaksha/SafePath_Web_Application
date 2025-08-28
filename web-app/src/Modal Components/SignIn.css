@@ -18,7 +18,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 556px;
-    height: 522px; /* Keep this height */
+    height: 500px; /* Keep this height */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -62,15 +62,15 @@
   /* Placeholder text color for input fields */
 .sign-in-form input::placeholder {
     color: #CECECE; /* Adjust the color to your preferred shade */
+    font-size: 13.5px;
   }
-  
 
   .sign-in-form input {
     width: 439px; /* Reduced width for better centering */
     padding: 10px;
     height: 60px;
     border: 1px solid #CECECE;
-    font-size: 15px;
+    font-size: 13.5px !important;
     border-radius: 10px 10px 0 0; /* Top-left and top-right border radius */
     font-family: 'Inter', sans-serif;
   }
@@ -91,7 +91,6 @@
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    margin-top: 22px; /* Space between input fields and button */
     transition: background-color 0.3s, color 0.3s;
   }
   
@@ -115,7 +114,7 @@
     content: '';
     display: block;
     width: 139.03px; /* Width of the line */
-    height: 1px; /* Thickness of the line */
+    height: 0.5px; /* Thickness of the line */
     background-color: #CECECE; /* Color of the line */
   }
   
@@ -146,7 +145,7 @@
 
   /* Sign in title */
 .sign-in-title {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Inter', sans-serif;
     font-weight: 650;
     color: black;
@@ -158,7 +157,7 @@
 .forgot-password {
     width: 439px; /* Align with password input width */
     text-align: right; /* Align text to the right */
-    margin-top: 7px; /* Add slight spacing above */
+    margin-bottom: 18px; /* Add slight spacing above */
   }
   
   .forgot-password a {

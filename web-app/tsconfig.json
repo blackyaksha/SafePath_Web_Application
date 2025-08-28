@@ -21,6 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src/**/*",  // Keep this, as it covers all your TypeScript files in the src folder
+    "src/Simulation Tool/mapboxServices.ts"
   ]
 }

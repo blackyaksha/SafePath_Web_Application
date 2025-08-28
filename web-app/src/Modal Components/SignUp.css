@@ -18,7 +18,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 560px;
-    height: 650px; /* Keep this height */
+    height: 580px; /* Keep this height */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -164,7 +164,7 @@
     content: '';
     display: block;
     width: 139.03px; /* Width of the line */
-    height: 1px; /* Thickness of the line */
+    height: 0.5px; /* Thickness of the line */
     background-color: #CECECE; /* Color of the line */
   }
   
@@ -195,7 +195,7 @@
 
   /* Sign in title */
 .sign-in-title {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Inter', sans-serif;
     font-weight: 650;
     color: black;

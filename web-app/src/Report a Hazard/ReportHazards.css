@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 .header-shadow {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -43,7 +45,6 @@
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 40px;
 }
 
 .Main-Section-SubheadingText {
@@ -164,12 +165,12 @@
   }
 
 .reportForm-header {
-    font-size: 25px;
+    font-size: 18px;
     font-family: 'Inter', sans-serif;
 }
 
 .reportForm-subheading {
-    font-size: 18px;
+    font-size: 14px;
     font-family: 'Inter', sans-serif;
     border-radius: 10px;
     background-color: #E5E5E5;
@@ -177,9 +178,9 @@
 }
 
 .report-form {
-    height: 376px;
+    height: auto;
     position: absolute;
-    right: 80px;
+    right: 120px;
     margin-top: 10px;
     background-color: white;
     width: 532px; /* Set the desired width here */
@@ -190,6 +191,24 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
+  .leaflet-top.leaflet-right {
+    top: 100px; /* adjust based on your layout */
+    right: 5px;
+  }
+  
+  .leaflet-control-geosearch {
+    top: 5px;
+    left: 0px !important;  /* Adjust this value as needed */
+    right: auto !important; /* Prevent it from sticking to the right */
+  }
+  
+
+/* Optional: adjust input width for better balance */
+.leaflet-control-geosearch .leaflet-bar-part input {
+  width: 100% !important;
+}
+
+
 .report-container {
     flex-direction: column;
 }
@@ -197,13 +216,31 @@
 /* Targeting the label inside the specific RadioGroup */
 .report-radio-group .MuiFormControlLabel-label {
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 700;
   }
 
   .report-radio-group {
-    margin-top: 15px;
+    margin-top: 10px;
   }
+
+  
+  .submit-button {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.submit-button .icon {
+    font-size: 22px; /* Icon size */
+    margin-left: 6px; /* Adds space between text and icon */
+    font-weight: 500;
+}
 
   .next-button {
     font-size: 15px;
@@ -212,7 +249,7 @@
     display: flex;
     justify-content: flex-end;
     margin-left: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     transition: color 0.3s;
 }
 
@@ -220,6 +257,23 @@
     font-size: 22px; /* Icon size */
     margin-left: 6px; /* Adds space between text and icon */
     font-weight: 500;
+}
+
+.back-button {
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: auto;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.back-button .icon {
+  font-size: 22px; /* Icon size */
+  margin-left: 0px; /* Adds space between text and icon */
+  font-weight: 500;
 }
 
 /* Additional styling for the dropdown container */

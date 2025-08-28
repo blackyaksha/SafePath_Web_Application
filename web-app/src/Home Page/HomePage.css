@@ -1,0 +1,1171 @@
+.home-page-container {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.home-side-panel {
+  width: 247px; /* Set the width of the side panel */
+  background-color: white; /* Change background color to white */
+  height: 100%; /* Full height */
+  border-right: 1px solid #cecece; /* Add stroke on the right side */
+  padding: 20px 0;
+  display: flex; /* Add this */
+  flex-direction: column; /* Add this */
+  height: 100%; /* Make sure the panel takes full height */
+  justify-content: space-between; /* This will push bottom options to the bottom */
+}
+
+.sidebar-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-bottom-options {
+  margin-top: auto; /* Creates space between main options and bottom options */
+  padding-top: 30px; /* Adds extra space above bottom options */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom-option {
+  padding: 8px 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  gap: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.bottom-option:hover {
+  opacity: 0.8;
+}
+
+.sidebar-option {
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  gap: 12px;
+  font-family: "Inter", sans-serif; /* Add Inter font */
+  font-size: 12px; /* Set font size to 12px */
+  font-weight: 650; /* Set font weight to 600 */
+}
+.sidebar-option:hover {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.sidebar-option.selected {
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  width: 85%;
+  margin: 0 auto;
+  height: 34px; /* Set explicit height */
+}
+
+.sidebar-icon {
+  font-size: 21px; /* Adjust icon size */
+}
+
+.content-area {
+  flex-grow: 1; /* Take up remaining space */
+  position: relative; /* Needed for absolute positioning of children */
+}
+
+.notification-button {
+  position: absolute;
+  top: 10px; /* Distance from the top */
+  right: 10px; /* Distance from the right */
+  margin-right: 20px; /* Space on the right side of the button */
+  margin-top: 15px; /* Space at the top of the button */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.notification-button .material-icons {
+  font-size: 24px; /* Icon size */
+  width: 30px; /* Set width of the icon */
+  height: 30px; /* Set height of the icon */
+  display: flex; /* Ensures the icon centers correctly */
+  align-items: center; /* Center align vertically */
+  justify-content: center; /* Center align horizontally */
+}
+
+.home-search-bar {
+  position: absolute;
+  top: 20px; /* Align with notification button */
+  right: calc(
+    50px + 30px + 10px
+  ); /* Right of notification button + width of button + margin */
+  display: flex;
+  align-items: center;
+  width: 230px; /* Width of the search bar */
+  height: 39px; /* Height of the search bar */
+  border: 1px solid #cecece; /* Add stroke around the search bar */
+  border-radius: 10px; /* Add border radius to the search bar */
+  overflow: hidden; /* Ensures no child elements overflow the defined border */
+}
+
+.home-search-button {
+  display: flex;
+  align-items: center; /* Center align vertically */
+  justify-content: center; /* Center align horizontally */
+  height: 100%; /* Ensure it matches the height of the search bar */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  margin: 0; /* Adjust or remove margin if necessary */
+}
+
+.home-search-button .material-icons {
+  font-size: 17px; /* Icon size */
+}
+
+.home-search-bar input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  height: 100%;
+  line-height: 39px; /* Same as the input height to center text vertically */
+  outline: none; /* Remove focus outline */
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+.home-search-bar input[type="text"]::placeholder {
+  font-family: "Inter", sans-serif; /* Set the font family to Inter */
+  font-size: 12x; /* Set the font size */
+  color: #cecece; /* Set the font color */
+}
+
+.notification-container {
+  position: absolute;
+  right: 20px; /* Adjust right position for visual centering */
+  width: 293px; /* Set width */
+  height: 700px; /* Updated height */
+  background-color: white; /* Set background color */
+  border: 1px solid #cecece; /* Add stroke */
+  border-radius: 10px; /* Set border radius */
+  z-index: 10; /* Ensure it appears above other elements */
+  top: 50%; /* Position the top of the container at the middle of the page */
+  transform: translateY(
+    -50%
+  ); /* Shift the container up by half its height to center it */
+  transition: right 0.3s ease-in-out; /* Smooth transition for the right property */
+  right: -300px; /* Start hidden off the right side of the viewport */
+}
+
+/* CSS class to apply when the container is visible */
+.notification-container.show {
+  right: 10px; /* Adjust right position for visual centering when visible */
+}
+
+.close-notification-button {
+  position: absolute;
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-notification-button .material-icons {
+  font-size: 16px; /* Icon size */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  padding: 0 20px;
+  margin-bottom: 20px; /* Space between logo and options */
+}
+
+.logo-image {
+  height: 45px; /* Adjust size as needed */
+  width: auto;
+}
+
+.logo-text {
+  height: 25px; /* Adjust size as needed */
+  width: auto;
+}
+
+.menu-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #787776;
+  padding: 0 20px;
+  margin-bottom: 8px; /* Add some space between label and options */
+}
+
+.gradient-container {
+  display: flex;
+  align-items: center;
+  width: 190px;
+  height: 57px;
+  background: linear-gradient(to right, #c4c98c, #aad400);
+  margin: 10px auto; /* This centers the container horizontally */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  padding: 0px 28px;
+  margin-top: 28px;
+  gap: 12px;
+}
+
+.profile-image-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1; /* This ensures the profile info takes up remaining space */
+}
+
+.profile-name {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 650;
+  color: black;
+}
+
+.sign-out-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 650;
+  color: #787776;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sign-out-button:hover {
+  text-decoration: underline;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.manage-account-icon {
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.mobile-app-section {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  width: 100%;
+}
+
+.get-app-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 650;
+  margin: 0;
+}
+
+.download-button {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-size: 11px;
+  text-align: left;
+}
+
+.mobile-app-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-container {
+  position: absolute;
+  top: 20px;
+  left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 23px;
+  left: 26px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #787776;
+  font-weight: 600;
+  white-space: nowrap; /* Prevents line break */
+}
+
+.welcome-name {
+  position: absolute;
+  top: 50px; /* Adjusted to be directly below welcome-text */
+  left: 26px;
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  color: black;
+  font-weight: 600;
+  white-space: nowrap; /* Prevents line break */
+}
+
+/* EvacuationRoutes.css */
+.evacuation-routes-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 50px;
+  left: 60px;
+}
+
+.header-section-userRoles {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 50px;
+  left: 60px;
+  gap: 15px;
+}
+
+.header-section-hazardReports {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 50px;
+  left: 60px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* This only affects the icon and text */
+}
+
+.report-icon {
+  font-size: 35px; /* Adjust icon size */
+  color: black; /* Match text color */
+}
+
+.user-icon {
+  font-size: 35px; /* Adjust icon size */
+  color: black; /* Match the color of the text */
+}
+
+.evacuation-routes-title {
+  font-size: 25px;
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.simulation-button {
+  height: 32px;
+  width: 192px;
+  background-color: #302f2d;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-left: 22px; /* Adjust spacing between title and button */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.simulation-button .material-icons {
+  font-size: 18px;
+}
+
+.submit-report-button {
+  height: 32px;
+  width: 160px;
+  background-color: #302f2d;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 550;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-left: 22px; /* Adjust spacing between title and button */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-report-button .material-icons {
+  font-size: 18px;
+}
+
+.divider-section {
+  position: relative;
+  top: 10px;
+  left: 60px;
+  margin-top: 75px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Scrollable item list */
+.scrollable-list {
+  flex-grow: 1;
+  max-height: 500px; /* Adjust this value based on your layout */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding-right: 10px; /* Prevents horizontal overflow due to scrollbar */
+  padding-bottom: 20px;
+}
+
+/* Hide scrollbar (optional) */
+.scrollable-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0px; /* Add space between button and line */
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px; /* Add this to match the height of filter options */
+  align-self: center; /* Add this */
+}
+
+.refresh-button .material-icons {
+  font-size: 20px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.divider-line {
+  width: 1137px;
+  height: 1px;
+  background-color: #cecece;
+  border: none;
+  display: block; /* Ensures the line takes its own space */
+}
+
+/* Add these to HomePage.css */
+.filter-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  justify-content: space-between;
+  width: 1137px; /* Match the width of your divider line */
+}
+
+.filter-option-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-rectangle {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center; /* Ensure text is centered */
+  line-height: 1; /* Prevent any extra line height */
+  padding: 0; /* Remove any padding that might affect centering */
+  margin: 0; /* Remove any margin that might affect centering */
+}
+
+.filter-options {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+.filter-option {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #787776;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0px; /* Reduce this value to bring options closer to divider line */
+}
+
+.filter-option-userRoles {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #787776;
+  cursor: pointer;
+  padding: 9px 0;
+  transition: all 0.2s ease;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0px; /* Reduce this value to bring options closer to divider line */
+}
+
+.filter-option-userRoles:hover {
+  color: #302f2d;
+}
+
+.filter-option-userRoles.active {
+  color: #000000;
+  font-weight: 650;
+  position: relative;
+}
+
+.filter-option-userRoles.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* Reduce this value (was -4px) to bring indicator line closer to divider */
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #aad400;
+  z-index: 1;
+}
+
+.filter-option:hover {
+  color: #302f2d;
+}
+
+.filter-option.active {
+  color: #000000;
+  font-weight: 650;
+  position: relative;
+}
+
+.filter-option.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* Reduce this value (was -4px) to bring indicator line closer to divider */
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #aad400;
+  z-index: 1;
+}
+
+.icon-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* Space between the tune and publish buttons */
+  margin-right: 20px;
+  height: 24px; /* Match the height of the filter options area */
+  margin-top: -4px; /* Adjust this value to fine-tune the vertical alignment */
+}
+
+.tune-button .publish-route-button .delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  align-self: center;
+}
+
+.tune-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 24px; /* Match parent height */
+}
+
+.tune-button .material-icons,
+.publish-button .material-icons,
+.delete-button .material-icons {
+  font-size: 20px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.dark-rectangle {
+  width: 1137px;
+  height: 55px;
+  background-color: #302f2d;
+  border-radius: 5px;
+  margin-top: 27px; /* Add some space between the divider and rectangle */
+  display: flex;
+  align-items: center;
+}
+
+.info-category-texts-set1 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.checkbox-icon {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 21px;
+}
+
+.route-id-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding-left: 21px;
+}
+
+.destination-text,
+.description-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.report-description-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding-left: 70px;
+}
+
+.email-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding-left: 35px;
+}
+
+.starting-location-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding-left: 55px;
+}
+
+.username-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding-left: 55px;
+}
+
+.date-created-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 210px; /* Add some padding from the left edge */
+}
+
+.date-submitted-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 215px; /* Add some padding from the left edge */
+}
+
+.signin-method-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 215px; /* Add some padding from the left edge */
+}
+
+.created-by-text,
+.status-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 70px; /* Add some padding from the left edge */
+}
+
+.date-created-text {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 90px; /* Add some padding from the left edge */
+}
+
+.white-rectangle {
+  width: 1137px;
+  height: 55px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 12px; /* Add some space between the divider and rectangle */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.route-checkbox {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 21px;
+}
+
+.route-id {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  padding-left: 21px;
+  display: inline-block;
+  width: 80px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-info-category-set1 {
+  display: flex;
+  align-items: center;
+}
+
+.route-starting-location {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  padding-left: 39px;
+  display: inline-block;
+  width: 170px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hazard-location {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  padding-left: 50px;
+  display: inline-block;
+  width: 170px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.username {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  padding-left: 75px;
+  display: inline-block;
+  width: 170px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-destination {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  display: inline-block;
+  width: 110px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 19px;
+}
+
+.route-description {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  display: inline-block;
+  width: 280px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 25px;
+}
+
+.hazard-report-description {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  display: inline-block;
+  width: 280px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 50px;
+}
+
+.date-created {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 150px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 22px;
+}
+
+.date-submitted {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 120px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 50px;
+}
+
+.email {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 140px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.created-by {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 130px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 18px; /* Add some padding from the left edge */
+}
+
+.submitted-by {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 200px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 90px; /* Add some padding from the left edge */
+}
+
+.date-created-user {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 200px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 55px; /* Add some padding from the left edge */
+}
+
+.status {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  align-items: center;
+  display: inline-block;
+  width: 100px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 21px; /* Add some padding from the left edge */
+}
+
+.more-options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-right: 21px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.more-options-button:hover {
+  opacity: 0.7;
+}
+
+.tune-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  transform: none;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 85px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sort-option {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #302f2d;
+  cursor: pointer;
+  display: block;
+}
+
+.sort-option:hover {
+  background-color: #f5f5f5;
+}
+
+.sort-dropdown:before {
+  position: absolute;
+  top: -4px;
+  left: auto;
+  right: 10px;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sort-option:first-child:hover {
+  background-color: #f5f5f5;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.sort-option:last-child:hover {
+  background-color: #f5f5f5;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.spinning {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 220px; /* Adjust width */
+  height: 33px;
+  background-color: white;
+  position: relative;
+  margin-left: 22px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.search-bar input::placeholder {
+  color: #b0b0b0;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Match input height */
+}
+
+.search-button .material-icons {
+  font-size: 17px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.status-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  min-width: 70px; /* Ensures proper size */
+  margin-left: 0px;
+}
+
+.status-container-evac {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  min-width: 70px; /* Ensures proper size */
+  margin-left: 0px;
+}
+
+/* Specific styling for Disabled status */
+.disabled-status {
+  background-color: #f8cfff; /* Same color as your Disabled count container */
+  color: #9a06b3; /* Matching text color */
+}
+
+.route-status {
+  background-color: #b1deff; /* Same color as your Disabled count container */
+  color: #194eaa; /* Matching text color */
+}
